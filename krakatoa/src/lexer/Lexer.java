@@ -378,6 +378,11 @@ public class Lexer {
     // number of current line. Starts with 1
     private int lineNumber;
 
-    private ErrorSignaller error;
+    public void setLineNumber(int lineNumber) {
+		this.lineNumber = lineNumber;
+	}
+
+
+	private ErrorSignaller error;
 
 }

@@ -77,9 +77,4 @@ public class KraClass extends Type {
 		this.instanceVariableList.add(instanceVariable);
 		
 	}
-
-	public void genkra(PW pw) {
-		// TODO Auto-generated method stub
-		
-	}
 }
