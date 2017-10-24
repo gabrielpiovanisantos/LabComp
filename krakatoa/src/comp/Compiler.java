@@ -272,6 +272,11 @@ public class Compiler {
 		if (this.currentClass.getName().equals("Program") && this.currentMethod.getName().equals("run")
 				&& this.currentMethod.param != null)
 			signalError.showError("method run can not take parameters");
+		if (this.currentClass.getName().equals("Program") && this.currentMethod.getName().equals("run") 
+				&& this.currentMethod.getReturnType() != Type.voidType)
+				signalError.showError("Method '" + this.currentMethod.getName() + "' of class '" +this.currentClass.getName()+ 
+						"' with a return value type different from 'void'");
+		
 		lexer.nextToken();
 		if (lexer.token != Symbol.LEFTCURBRACKET)
 			signalError.showError("{ expected");
@@ -540,8 +545,12 @@ public class Compiler {
 				right = expr();
 				Type r = right.getType();
 				Type l = left.getType();
-
-				if (left.getType() != right.getType())
+				
+				if(r == Type.undefinedType){
+					if(l.isDefaultType())
+						signalError.showError("Expressions of diferents types");					
+				}				
+				else if (l != r)
 					signalError.showError("Expressions of diferents types");
 
 				if (lexer.token != Symbol.SEMICOLON)
@@ -748,6 +757,12 @@ public class Compiler {
 				|| op == Symbol.GT) {
 			lexer.nextToken();
 			Expr right = simpleExpr();
+			if(op == Symbol.EQ){
+				if(left.getType() != right.getType()){
+					signalError.showError("Incompatible types cannot be compared with '==' because the result will always be 'false'");
+				}
+			}
+				
 			left = new CompositeExpr(left, op, right);
 		}
 		return left;

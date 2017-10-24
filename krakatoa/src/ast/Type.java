@@ -23,7 +23,13 @@ abstract public class Type {
     abstract public String getCname();
 
     private String name;
-
+    
+    public boolean isDefaultType(){
+    	if((this == booleanType)||(this == intType)||(this == stringType)||(this == voidType))
+    		return true;
+    	return false;
+    }
+    
 	public boolean isCompatible(Type other) {
 		if(this == booleanType)
 			return other == booleanType;
