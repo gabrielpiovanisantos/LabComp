@@ -74,7 +74,7 @@ public class KraClass extends Type {
 	}
 
 	public void genkra(PW pw) {
-		if(this.superclass!=null)
+		if(this.superclass==null)
 		{
 			pw.println("class "+this.getName()+" {");
 		}
