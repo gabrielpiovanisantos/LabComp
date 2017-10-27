@@ -37,6 +37,6 @@ public class StatementAssert extends Statement {
 	public void genKra(PW pw) {
 		pw.printIdent("assert");
 		this.expr.genKra(pw);
-		pw.print(", " + this.message);
+		pw.println(", " + this.message);
 	}
 }

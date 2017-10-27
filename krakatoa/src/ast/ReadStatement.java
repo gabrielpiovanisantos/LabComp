@@ -20,7 +20,7 @@ public class ReadStatement extends Statement{
 	@Override
 	public void genKra(PW pw) {
 		int size = name.size();
-		pw.print("read(");
+		pw.printIdent("read(");
 		for(String n: name)
 		{
 			pw.print(n);

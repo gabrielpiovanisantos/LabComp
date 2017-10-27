@@ -5,9 +5,9 @@ public class ConstructExpr extends Expr {
 	private String className;
 	private KraClass aclass;
 	
-	public ConstructExpr(String className,KraClass aclass) {
+	public ConstructExpr(String className, KraClass aclass2) {
 		this.className = className;
-		this.aclass = aclass;
+		this.aclass = aclass2;
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class ConstructExpr extends Expr {
 	
 	@Override
 	public void genKra(PW pw) {
-		// TODO Auto-generated method stub
+		pw.printlnIdent("new "+ this.className+ " ( )");
 
 	}
 

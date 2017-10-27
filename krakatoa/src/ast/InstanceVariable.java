@@ -6,4 +6,8 @@ public class InstanceVariable extends Variable {
         super(name, type);
     }
 
+	public void genkra(PW pw) {
+		pw.printlnIdent("private"+" "+this.getType().getName()+" "+this.getName()+";");		
+	}
+
 }

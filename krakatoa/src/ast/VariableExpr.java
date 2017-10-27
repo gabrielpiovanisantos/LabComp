@@ -18,8 +18,7 @@ public class VariableExpr extends Expr {
 
 	@Override
 	public void genKra(PW pw) {
-		
-		
+		pw.printIdent(this.v.getName());	
 	}
 
 	

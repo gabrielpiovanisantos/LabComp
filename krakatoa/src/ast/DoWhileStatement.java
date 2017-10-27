@@ -18,8 +18,13 @@ public class DoWhileStatement extends Statement {
 
 	@Override
 	public void genKra(PW pw) {
-		// TODO Auto-generated method stub
-
+		pw.printlnIdent("do {");
+		pw.add();
+		this.comp.genKra(pw);
+		pw.sub();
+		pw.printIdent("} while (");
+		this.expr.genKra(pw);
+		pw.println(")");
 	}
 
 }

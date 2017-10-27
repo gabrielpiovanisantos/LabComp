@@ -2,8 +2,12 @@ package ast;
 
 public class SuperMethodExpr extends Expr {
 
+	private String messageName;
+	private ExprList exprList;
+
 	public SuperMethodExpr(String messageName, ExprList exprList) {
-		// TODO Auto-generated constructor stub
+		this.messageName = messageName;
+		this.exprList = exprList;
 	}
 
 	@Override
@@ -20,8 +24,9 @@ public class SuperMethodExpr extends Expr {
 
 	@Override
 	public void genKra(PW pw) {
-		// TODO Auto-generated method stub
-
+		pw.printIdent("super."+this.messageName+ " (");
+		this.exprList.genKra(pw);
+		pw.println(" )");
 	}
 
 	

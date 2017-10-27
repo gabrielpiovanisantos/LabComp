@@ -62,7 +62,12 @@ public class CompositeExpr extends Expr {
 	@Override
 	public void genKra(PW pw) {
 		this.left.genKra(pw);
-		pw.print(" "+arrayOper.get(oper)+" ");
+		String strSymbol = arrayOper.get(oper);
+        if ( strSymbol == null ) {
+        	pw.println("internal error in CompositeExpr::genkra");
+        }
+        else
+            pw.print(" " + strSymbol + " ");
 		this.right.genKra(pw);
 		
 	}

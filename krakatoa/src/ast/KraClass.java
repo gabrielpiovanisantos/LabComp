@@ -11,8 +11,6 @@ public class KraClass extends Type {
 	private KraClass superclass;
 	private ArrayList<InstanceVariable> instanceVariableList;
 	private ArrayList<MethodDec> publicMethodList, privateMethodList;
-	
-	
 
 	public KraClass(String className) {
 		super(className);
@@ -29,7 +27,6 @@ public class KraClass extends Type {
 		this.superclass = superclass;
 	}
 
-	
 	// métodos públicos get e set para obter e iniciar as variáveis acima,
 	// entre outros métodos
 
@@ -58,16 +55,14 @@ public class KraClass extends Type {
 	public ArrayList<MethodDec> getPrivateMethodList() {
 		return privateMethodList;
 	}
-	
+
 	public void addMethod(MethodDec amethod) {
 		publicMethodList.add(amethod);
 	}
 
-	public MethodDec searchPublicMethod(String methodName) 
-	{	
-		for(MethodDec m: this.publicMethodList)
-		{
-			if(m.getName().equals(methodName))
+	public MethodDec searchPublicMethod(String methodName) {
+		for (MethodDec m : this.publicMethodList) {
+			if (m.getName().equals(methodName))
 				return m;
 		}
 		return null;
@@ -75,11 +70,28 @@ public class KraClass extends Type {
 
 	public void addInstanceVariable(InstanceVariable instanceVariable) {
 		this.instanceVariableList.add(instanceVariable);
-		
+
 	}
 
 	public void genkra(PW pw) {
-		
-		
+		if(this.superclass!=null)
+		{
+			pw.println("class "+this.getName()+" {");
+		}
+		else
+		{
+			pw.println("class "+this.getName()+ " extends "+this.superclass.getName()+ " {");
+		}
+		pw.add();
+		if (this.instanceVariableList != null) {
+			for (InstanceVariable instvar : this.instanceVariableList) 
+				instvar.genkra(pw);
+		}
+		if(this.publicMethodList!=null) {
+			for(MethodDec mdec: this.publicMethodList)
+				mdec.genKra(pw);
+		}
+		pw.sub();
+		pw.println("}");
 	}
 }

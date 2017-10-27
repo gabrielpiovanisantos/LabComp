@@ -7,7 +7,7 @@ public class VarMethodExpr extends Expr {
 	private ExprList exprList;
 	private String id22;
 	private Type type;
-	
+
 	public VarMethodExpr(String firstId, String id, ExprList exprList, Type type) {
 		this.firstId = firstId;
 		this.id = id;
@@ -15,7 +15,7 @@ public class VarMethodExpr extends Expr {
 		this.type = type;
 	}
 
-	public VarMethodExpr(String firstId2, String id2,Type type) {
+	public VarMethodExpr(String firstId2, String id2, Type type) {
 		this.firstId = firstId2;
 		this.id = id2;
 		this.type = type;
@@ -45,7 +45,17 @@ public class VarMethodExpr extends Expr {
 
 	@Override
 	public void genKra(PW pw) {
-		// TODO Auto-generated method stub
-
+		pw.printIdent(this.firstId);
+		if (this.id != null) {
+			pw.print("." + this.id);
+			if (this.id22 != null)
+				pw.print("." + this.id22);
+			if (this.exprList != null)
+				pw.println("( " + this.exprList + " )");
+			else
+				pw.println("");
+		}
+		else
+			pw.println("");
 	}
 }

@@ -1,8 +1,8 @@
 Relatório do Compilador
 
-8 de um total de 122 erros que deveriam ser sinalizados não o foram (6%)
-3 erros foram sinalizados na linha errada (2%)
-19 erros foram sinalizados em 63 arquivos sem erro (30%)
+9 de um total de 122 erros que deveriam ser sinalizados não o foram (7%)
+0 erros foram sinalizados na linha errada (0%)
+20 erros foram sinalizados em 63 arquivos sem erro (31%)
 
 Erros que deveriam ser sinalizados mas não foram:
 
@@ -16,27 +16,15 @@ ER-SEM47.KRA, 24, Method 'm' was not found in superclass 'B' or its superclasses
 
 ER-SEM51.KRA, 17, Method 'put' is being redefined in subclass 'B' with a signature different from the method of superclass 'A' (comp.Compiler.methodDec())
 
+ER-SEM58.KRA, 21, Incompatible types cannot be compared with '!=' because the result will always be 'false' (comp.Compiler.expr())
+
 ER-SEM59.KRA, 25, Method 'p' was not found in the public interface of 'A' or its superclasses (comp.Compiler.factor())
 
 ER-SEM60.KRA, 21, Method 'p' was not found in the public interface of 'A' or its superclasses (comp.Compiler.factor())
 
 ER-SEM62.KRA, 15, Identifier 'a' was not found (comp.Compiler.factor())
 
-######################################################
-Erros que foram sinalizados na linha errada:
-
-ER-SEM57.KRA
-    correto:    21, Incompatible types cannot be compared with '==' because the result will always be 'false' (comp.Compiler.expr())
-    sinalizado: 19, Expressions of diferents types
-
-ER-SEM58.KRA
-    correto:    21, Incompatible types cannot be compared with '!=' because the result will always be 'false' (comp.Compiler.expr())
-    sinalizado: 19, Expressions of diferents types
-
-ER-SEM80.KRA
-    correto:    7, Method 'run' of class 'Program' with a return value type different from 'void' (comp.Compiler.methodDec())
-    sinalizado: 8, a non void method must have a return statement
-
+Um ou mais arquivos de teste tinham erros, mas estes foram sinalizados nos números de linhas corretos
 ######################################################
 Erros que foram sinalizados mas não deveriam ter sido:
 
@@ -44,7 +32,7 @@ OK-CHK02.KRA, 46, a non void method must have a return statement
 
 OK-CHK05.KRA, 40, Method mis not a public method ofCwhich is the type ofc
 
-OK-CHK06.KRA, 16, Expressions of diferents types
+OK-CHK06.KRA, 18, Method mis not a public method ofAwhich is the type ofa
 
 OK-GER05.KRA, 30, variable has already been declared
 
@@ -55,6 +43,8 @@ OK-GER13.KRA, 70, Return expression type is not compatible with the method type
 OK-GER14.KRA, 30, variable has already been declared
 
 OK-GER22.KRA, 35, 'while' expected
+
+OK-SEM03.KRA, 18, Incompatible types cannot be compared with '==' because the result will always be 'false'
 
 OK-SEM05.KRA, 50, Return expression type is not compatible with the method type
 
@@ -68,7 +58,7 @@ OK-SEM10.KRA, 45, Method firstis not a public method ofBwhich is the type ofb
 
 OK-SEM12.KRA, 22, Identifier expected
 
-OK-SEM14.KRA, 24, Expressions of diferents types
+OK-SEM14.KRA, 27, Incompatible types cannot be compared with '==' because the result will always be 'false'
 
 OK-SIN06.KRA, 17, Method mis not a public method ofAwhich is the type ofa
 
@@ -338,6 +328,11 @@ The compiler message was: "'break' statement found outside a 'while' statement"
 The 'ce' message is:      "Command 'break' outside a command 'while'"
 
 
+ER-SEM57.KRA
+The compiler message was: "Incompatible types cannot be compared with '==' because the result will always be 'false'"
+The 'ce' message is:      "Incompatible types cannot be compared with '==' because the result will always be 'false'"
+
+
 ER-SEM61.KRA
 The compiler message was: "Method sis not a public method ofCwhich is the type ofc"
 The 'ce' message is:      "Method 's' was not found in class 'C' or its superclasses"
@@ -366,6 +361,11 @@ The 'ce' message is:      "Source code without a class 'Program'"
 ER-SEM79.KRA
 The compiler message was: "method run can not take parameters"
 The 'ce' message is:      "Method 'run' of class 'Program' cannot take parameters"
+
+
+ER-SEM80.KRA
+The compiler message was: "Method 'run' of class 'Program' with a return value type different from 'void'"
+The 'ce' message is:      "Method 'run' of class 'Program' with a return value type different from 'void'"
 
 
 ER-SEM81.KRA

@@ -21,8 +21,6 @@ public class AssignExprLocalDec extends Statement{
 			this.left.genKra(pw);
 			pw.print("=");
 			this.right.genKra(pw);
-		}
-		
+		}		
 	}
-
 }
