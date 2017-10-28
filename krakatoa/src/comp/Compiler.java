@@ -208,7 +208,7 @@ public class Compiler {
 				signalError.showError("method 'run' was not found in class 'Program'");
 		}
 		lexer.nextToken();
-		
+
 		return this.currentClass;
 
 	}
@@ -216,12 +216,9 @@ public class Compiler {
 	private void instanceVarDec(Type type, String name) {
 		// InstVarDec ::= [ "static" ] "private" Type IdList ";"
 
-		this.currentClass.addInstanceVariable(new InstanceVariable(name, type));
-
 		InstanceVariable var = new InstanceVariable(name, type);
-		if (symbolTable.getInLocal(var.getName()) != null)
+		if (this.currentClass.searchVariable(name) != null)
 			signalError.showError("variable has already been declared");
-		symbolTable.putInLocal(var.getName(), var);
 		this.currentClass.addInstanceVariable(var);
 
 		while (lexer.token == Symbol.COMMA) {
@@ -229,9 +226,8 @@ public class Compiler {
 			if (lexer.token != Symbol.IDENT)
 				signalError.showError("Identifier expected");
 			var = new InstanceVariable(lexer.getStringValue(), type);
-			if (symbolTable.getInLocal(var.getName()) != null)
+			if (this.currentClass.searchVariable(var.getName()) != null)
 				signalError.showError("variable has already been declared");
-			symbolTable.putInLocal(var.getName(), var);
 			this.currentClass.addInstanceVariable(var);
 			lexer.nextToken();
 		}
@@ -261,7 +257,7 @@ public class Compiler {
 		if (flag)
 			signalError.showError("Method '" + this.currentMethod.getName() + "' is being redeclared");
 
-		if (symbolTable.getInLocal(this.currentMethod.getName()) != null)
+		if (this.currentClass.searchVariable(this.currentMethod.getName()) != null)
 			signalError
 					.showError("Method '" + this.currentMethod.getName() + "' has name equal to an instance variable");
 		lexer.nextToken();
@@ -272,11 +268,11 @@ public class Compiler {
 		if (this.currentClass.getName().equals("Program") && this.currentMethod.getName().equals("run")
 				&& this.currentMethod.param != null)
 			signalError.showError("method run can not take parameters");
-		if (this.currentClass.getName().equals("Program") && this.currentMethod.getName().equals("run") 
+		if (this.currentClass.getName().equals("Program") && this.currentMethod.getName().equals("run")
 				&& this.currentMethod.getReturnType() != Type.voidType)
-				signalError.showError("Method '" + this.currentMethod.getName() + "' of class '" +this.currentClass.getName()+ 
-						"' with a return value type different from 'void'");
-		
+			signalError.showError("Method '" + this.currentMethod.getName() + "' of class '"
+					+ this.currentClass.getName() + "' with a return value type different from 'void'");
+
 		lexer.nextToken();
 		if (lexer.token != Symbol.LEFTCURBRACKET)
 			signalError.showError("{ expected");
@@ -331,9 +327,8 @@ public class Compiler {
 				lexer.setLineNumber(lexer.getLineNumber() - 1);
 				this.signalError.showError("semicolon expected");
 				lexer.setLineNumber(lexer.getLineNumber() + 1);
-			}
-			else
-			this.signalError.showError("semicolon expected");
+			} else
+				this.signalError.showError("semicolon expected");
 		}
 		return new LocalDec(arrayVar, type);
 	}
@@ -545,12 +540,11 @@ public class Compiler {
 				right = expr();
 				Type r = right.getType();
 				Type l = left.getType();
-				
-				if(r == Type.undefinedType){
-					if(l.isDefaultType())
-						signalError.showError("Expressions of diferents types");					
-				}				
-				else if (l != r)
+
+				if (r == Type.undefinedType) {
+					if (l.isDefaultType())
+						signalError.showError("Expressions of diferents types");
+				} else if (l != r)
 					signalError.showError("Expressions of diferents types");
 
 				if (lexer.token != Symbol.SEMICOLON)
@@ -757,12 +751,12 @@ public class Compiler {
 				|| op == Symbol.GT) {
 			lexer.nextToken();
 			Expr right = simpleExpr();
-			if(op == Symbol.EQ){
-				if(left.getType() != right.getType()){
-					signalError.showError("Incompatible types cannot be compared with '==' because the result will always be 'false'");
-				}
+
+			if (left.getType() != right.getType()) {
+				signalError.showError(
+						"Incompatible types cannot be compared with '==' because the result will always be 'false'");
 			}
-				
+
 			left = new CompositeExpr(left, op, right);
 		}
 		return left;
@@ -901,6 +895,8 @@ public class Compiler {
 		 */
 		case SUPER:
 			// "super" "." Id "(" [ ExpressionList ] ")"
+			if(this.currentClass.getSuperclass()==null)
+				this.signalError.showError("'super' used in class '"+this.currentClass.getName()+"' that does not have a superclass");
 			lexer.nextToken();
 			if (lexer.token != Symbol.DOT) {
 				signalError.showError("'.' expected");
@@ -928,6 +924,8 @@ public class Compiler {
 				// Id
 				// retorne um objeto da ASA que representa um identificador
 				Variable avar = this.symbolTable.getInLocal(firstId);
+				if(this.currentClass.searchVariable(firstId)!=null && avar == null)
+					this.signalError.showError("Identifier '"+avar.getName()+"' was not found");
 				if (avar == null)
 					signalError.showError("class " + firstId + "does not exists");
 

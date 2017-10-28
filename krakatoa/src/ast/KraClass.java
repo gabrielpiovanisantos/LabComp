@@ -72,6 +72,14 @@ public class KraClass extends Type {
 		this.instanceVariableList.add(instanceVariable);
 
 	}
+	
+	public InstanceVariable searchVariable(String varName) {
+		for (InstanceVariable m : this.instanceVariableList) {
+			if (m.getName().equals(varName))
+				return m;
+		}
+		return null;
+	}
 
 	public void genkra(PW pw) {
 		if(this.superclass==null)
