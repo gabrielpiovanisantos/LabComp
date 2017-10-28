@@ -56,7 +56,7 @@ public class Compiler {
 		} catch (CompilerError e) {
 			// if there was an exception, there is a compilation signalError
 		} catch (RuntimeException e) {
-			// if there was an exception, there is a compilation signalError
+			e.printStackTrace();
 		}
 		return program;
 	}
