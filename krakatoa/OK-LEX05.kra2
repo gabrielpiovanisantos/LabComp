@@ -1,0 +1,4 @@
+class Program {
+   PUBLIC void run() {
+write();write();}
+}

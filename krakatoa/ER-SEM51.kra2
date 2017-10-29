@@ -1,0 +1,18 @@
+class A {
+   private int i;
+   PUBLIC void put(int x, int y, boolean ok) {
+}
+}
+class B extends A {
+   PUBLIC void put(int x, int y, int ok) {
+}
+}
+class Program {
+   PUBLIC void run() {
+      Aa;
+;
+      a=      new A ( )
+      a.put( ast.ExprList@4aa298b7 )
+=;
+}
+}

@@ -1,0 +1,23 @@
+class A {
+   PUBLIC void m() {
+      inti;
+;
+      intj;
+;
+      intk;
+;
+write();      i=      j=      i +       k=      j + write(      i);write(      j);write(      k);      i=(((( +       ) *       ) /       ) /       ) + write(      i);      i=(( -       ) *       ) - write(      i);      i=( - ( *       )      ) - write(      i);write();}
+}
+class Program {
+   PUBLIC void run() {
+      Aa;
+;
+write();
+write();
+write();
+write();
+      a=      new A ( )
+      a.m
+=;
+}
+}

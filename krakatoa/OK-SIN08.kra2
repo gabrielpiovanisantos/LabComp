@@ -1,0 +1,13 @@
+class A {
+   PUBLIC int m(int x, int y, boolean ok) {
+      return       x +       y;
+}
+}
+class Program {
+   PUBLIC void run() {
+      Aa;
+;
+      a=      new A ( )
+write(      a.m( ast.ExprList@45ee12a7 )
+);}
+}

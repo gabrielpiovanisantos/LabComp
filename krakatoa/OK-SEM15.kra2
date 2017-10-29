@@ -1,0 +1,24 @@
+class A {
+   PUBLIC void print() {
+write();}
+   PUBLIC void accept(A x) {
+      x.print
+=;
+}
+}
+class B extends A {
+   PUBLIC void m() {
+      super.accept (      this
+ )
+=;
+}
+}
+class Program {
+   PUBLIC void run() {
+      Bb;
+;
+      b=      new B ( )
+      b.m
+=;
+}
+}

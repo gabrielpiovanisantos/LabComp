@@ -155,8 +155,8 @@ public class Compiler {
 			if (symbolTable.getInGlobal(superclassName) == null)
 				signalError.showError("superclass have not been declared");
 			if (className.compareToIgnoreCase(superclassName) == 0)
-				signalError.showError("class" + className + "is inheriting from itself");
-			this.currentClass.setSuperclass(new KraClass(superclassName));
+				signalError.showError("class" + className + "is inheriting from itself");		
+			this.currentClass.setSuperclass(symbolTable.getInGlobal(superclassName));
 			lexer.nextToken();
 		}
 		if (lexer.token != Symbol.LEFTCURBRACKET)
@@ -243,26 +243,50 @@ public class Compiler {
 		 * "}"
 		 */
 		this.currentMethod = new MethodDec(type, name, qualifier);
+		KraClass superclass = this.currentClass.getSuperclass();
 		ArrayList<MethodDec> publicMethodList = this.currentClass.getPublicMethodList();
-		int i = 0;
-		boolean flag = false;
-		while (i < publicMethodList.size()) {
+		ArrayList<MethodDec> privateMethodList = this.currentClass.getPrivateMethodList();
+		for (int i=0; i < publicMethodList.size(); i++) {
 			if (publicMethodList.get(i).getName().equals(name)) {
-				flag = true;
+				signalError.showError("Method '" + this.currentMethod.getName() + "' is being redeclared");
+				break;
+			}			
+		}
+		for(int i = 0; i < privateMethodList.size(); i++){
+			if (privateMethodList.get(i).getName().equals(name)) {
+				signalError.showError("Method '" + this.currentMethod.getName() + "' is being redeclared");
 				break;
 			}
-			i++;
 		}
-		// nao achou a variavel de instancia indicada
-		if (flag)
-			signalError.showError("Method '" + this.currentMethod.getName() + "' is being redeclared");
-
+		
 		if (this.currentClass.searchVariable(this.currentMethod.getName()) != null)
 			signalError
 					.showError("Method '" + this.currentMethod.getName() + "' has name equal to an instance variable");
 		lexer.nextToken();
 		if (lexer.token != Symbol.RIGHTPAR)
 			this.currentMethod.param = formalParamDec();
+		int i;
+		if(superclass != null){
+			i = 0;
+			ArrayList<MethodDec> superClasspublicMethodList = superclass.getPublicMethodList();
+			while (i < superClasspublicMethodList.size()) {
+				if (superClasspublicMethodList.get(i).getName().equals(name)) {
+					//String namme = superClasspublicMethodList.get(i).getName();
+					
+					//if(!superClasspublicMethodList.get(i).getParam().equals(this.currentMethod.param)){
+						//signalError.showError("Method '"+name+"' is being redefined in subclass '"+this.currentClass.getName()+"' with a signature different from the method of superclass '"+this.currentClass.getSuperclass().getName()+"'");
+						//break;
+					//}
+					
+					if(!superClasspublicMethodList.get(i).getReturnType().equals(type)){
+						signalError.showError("Method '"+superClasspublicMethodList.get(i).getName()+"' of subclass '"+ this.currentClass.getName()+"' has a signature different from method inherited from superclass '"+ superclass.getName()+"'");
+						break;
+					}
+				}			
+				i++;
+			}
+		}
+		
 		if (lexer.token != Symbol.RIGHTPAR)
 			signalError.showError(") expected");
 		if (this.currentClass.getName().equals("Program") && this.currentMethod.getName().equals("run")
@@ -294,7 +318,10 @@ public class Compiler {
 			signalError.showError("} expected");
 
 		lexer.nextToken();
-		this.currentClass.addMethod(this.currentMethod);
+		if(qualifier == Symbol.PRIVATE )
+			this.currentClass.addPrivateMethod(this.currentMethod);
+		if(qualifier == Symbol.PUBLIC)
+			this.currentClass.addPublicMethod(this.currentMethod);
 		this.currentMethod = null;
 	}
 
@@ -552,8 +579,13 @@ public class Compiler {
 				else
 					lexer.nextToken();
 			}
-			// else
-			// this.signalError.showError("assingment symbol (=) expected");
+			else if(lexer.token == Symbol.SEMICOLON){
+				if(left instanceof VarMethodExpr){
+					VarMethodExpr expr = (VarMethodExpr) left;
+					if(expr.getType() != Type.voidType)
+						signalError.showError("Message send '"+expr.getFirstId() +"."+expr.getId()+"()' returns a value that is not used");
+				}
+			}
 		}
 		a.left = left;
 		a.right = right;
@@ -905,6 +937,22 @@ public class Compiler {
 			if (lexer.token != Symbol.IDENT)
 				signalError.showError("Identifier expected");
 			messageName = lexer.getStringValue();
+			boolean flag2 = false;
+			
+			KraClass superclass = this.currentClass.getSuperclass();
+			
+			while(superclass != null){
+				ArrayList<MethodDec> list = superclass.getPublicMethodList();
+				for(int i=0; i < list.size(); i++){
+					if(list.get(i).getName().equals(messageName)){
+						flag2 = true;
+						break;
+					}
+				}
+				superclass = superclass.getSuperclass();
+			}
+			if(!flag2)
+				signalError.showError("Method '"+ messageName+"' was not found in superclass '"+this.currentClass.getName()+"' or its superclasses");
 			/*
 			 * para fazer as conferências semânticas, procure por 'messageName' na
 			 * superclasse/superclasse da superclasse etc
@@ -919,6 +967,9 @@ public class Compiler {
 			 */
 
 			String firstId = lexer.getStringValue();
+			if ((this.currentClass.searchVariable(firstId) != null) && (this.symbolTable.getInLocal(firstId) == null))
+				signalError.showError("Identifier '" +firstId +"' was not found");
+				
 			lexer.nextToken();
 			if (lexer.token != Symbol.DOT) {
 				// Id
@@ -938,6 +989,8 @@ public class Compiler {
 					// Id "." Id
 					lexer.nextToken();
 					id = lexer.getStringValue();
+					
+					
 					if (lexer.token == Symbol.DOT) {
 						// Id "." Id "." Id "(" [ ExpressionList ] ")"
 						/*
@@ -961,11 +1014,28 @@ public class Compiler {
 						if (!(typeVar instanceof KraClass))
 							signalError.showError("Attempt to call a method on a variable of a basic type");
 						exprList = this.realParameters();
+						
 						KraClass classVar = (KraClass) typeVar;
 						MethodDec amethod = classVar.searchPublicMethod(id);
-						if (amethod == null)
-							signalError.showError("Method " + id + "is not a public method of" + classVar.getCname()
-									+ "which is the type of" + firstId);
+						boolean flag3 = false;
+						if(amethod == null){
+							superclass = classVar.getSuperclass();
+							while(superclass != null){
+								amethod = superclass.searchPublicMethod(id);
+								if(amethod != null){
+									flag3 = true;
+									break;
+								}
+								superclass = superclass.getSuperclass();
+							}
+							if(!flag3)
+								signalError.showError("Method '"+id+"' was not found in the public interface of '"+ classVar.getName()+"' or its superclasses");
+						}
+						
+						//if (amethod == null)
+							//signalError.showError("Method " + id + " is not a public method of " + classVar.getCname()
+								//	+ " which is the type of " + firstId);
+						
 						/*
 						 * para fazer as conferências semânticas, procure por método 'ident' na classe
 						 * de 'firstId'
@@ -1007,24 +1077,31 @@ public class Compiler {
 					 * tomar os parâmetros de ExpressionList
 					 */
 					exprList = this.realParameters();
-					MethodDec amethod = currentClass.searchPublicMethod(id);
+					MethodDec amethod = this.currentClass.searchPublicMethod(id);
+					if(amethod == null)
+						amethod = this.currentClass.searchPrivateMethod(id);
 					Type type = null;
 					if (amethod == null)
-						signalError.showError("Method " + id + "is not a public method of currentclass or not exist");
+						signalError.showError("Method " + id + " is not a public method of currentclass or not exist");
 					else
 						type = amethod.getReturnType();
 					int i = 0;
-					ArrayList<Expr> eList = exprList.getExprList();
-					ArrayList<ParamDec> fParam = amethod.param.getParams();
-					boolean flag = false;
-					while (i < eList.size()) {
-						if (!eList.get(i).getType().isCompatible(fParam.get(i).getType()))
-							flag = true;
-						i++;
+					
+					if(amethod.param != null){
+						ArrayList<ParamDec> fParam = amethod.param.getParams();
+						boolean flag = false;
+						if(exprList != null){
+							ArrayList<Expr> eList = exprList.getExprList();
+							while (i < eList.size()) {
+								if (!eList.get(i).getType().isCompatible(fParam.get(i).getType()))
+									flag = true;
+								i++;
+							}
+							if (flag)
+								signalError.showError(
+										"Type error: the type of the real parameter is not subclass of the type of the formal parameter");
+						}
 					}
-					if (flag)
-						signalError.showError(
-								"Type error: the type of the real parameter is not subclass of the type of the formal parameter");
 					return new VarMethodExpr("this", id, exprList, type);
 				} else if (lexer.token == Symbol.DOT) {
 					// "this" "." Id "." Id "(" [ ExpressionList ] ")"

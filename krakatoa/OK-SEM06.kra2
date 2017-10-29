@@ -1,0 +1,23 @@
+class A {
+   private int n;
+   PUBLIC void set(int pn) {
+      intn;
+;
+      this.n
+=      pn}
+   PUBLIC int put(int n, String set) {
+      booleanput;
+;
+      this.n
+=      n      return       n;
+}
+}
+class Program {
+   PUBLIC void run() {
+      Aa;
+;
+      a=      new A ( )
+      a.set( ast.ExprList@6d6f6e28 )
+=;
+}
+}

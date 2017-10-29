@@ -1,0 +1,27 @@
+class A {
+   private int n;
+   PUBLIC void m() {
+      intk;
+;
+      k=      this.n
+write(      k);}
+   PUBLIC void p() {
+write(      this.n
+);}
+   PUBLIC void s() {
+      this.n
+=}
+}
+class Program {
+   PUBLIC void run() {
+      Aa;
+;
+      a=      new A ( )
+      a.s
+=;
+      a.m
+=;
+      a.p
+=;
+}
+}

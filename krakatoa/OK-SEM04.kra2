@@ -1,0 +1,9 @@
+class Program {
+   PUBLIC void run() {
+      inta, b;
+;
+      booleane, f;
+;
+      a=      b=      e=      f=      if ( (      a ==       b      ) && (      a ==       ) && ( ==       b      ) && (      a !=       b      ) && (      e ==       f      ) && ( ==       f      ) && (      e !=       f      ) && ( !=       f      )      )
+write();}
+}

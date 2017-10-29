@@ -21,7 +21,8 @@ public class StatementList {
 	public void genKra(PW pw) {
 		for(Statement s: stmtlist)
 		{
-			s.genKra(pw);			
+			if(s != null)
+				s.genKra(pw);			
 		}		
 	}
 

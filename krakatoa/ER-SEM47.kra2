@@ -1,0 +1,10 @@
+class A {
+   private int n;
+   PUBLIC void set(int n) {
+      this.n
+=      n}
+   PUBLIC int get() {
+      return       this.n
+;
+}
+}

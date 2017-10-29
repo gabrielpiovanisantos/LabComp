@@ -1,0 +1,10 @@
+class A {
+   private int k;
+   PUBLIC int get_A() {
+      return       this.k
+;
+}
+   PUBLIC void init() {
+      this.k
+=}
+}

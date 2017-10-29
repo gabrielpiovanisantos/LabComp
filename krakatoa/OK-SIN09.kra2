@@ -1,0 +1,23 @@
+class A {
+   private int n;
+   private int k;
+   PUBLIC int m() {
+      this.m2( ast.ExprList@330bedb4 )
+=;
+      return       this.m1
+ +       this.k
+;
+}
+   PUBLIC void init() {
+      this.k
+=      this.n
+=}
+}
+class Program {
+   PUBLIC void run() {
+      Aa;
+;
+      a=      new A ( )
+write(      a.m
+);}
+}

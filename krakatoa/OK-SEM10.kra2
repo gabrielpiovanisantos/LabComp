@@ -1,0 +1,12 @@
+class A {
+   PUBLIC void first(int pn) {
+}
+}
+class B extends A {
+   PUBLIC void second() {
+}
+}
+class C extends B {
+   PUBLIC void third() {
+}
+}

@@ -1,0 +1,36 @@
+class Person {
+   private String course;
+   private int number;
+   private int age;
+   private String name;
+   PUBLIC String getCourse() {
+      return       this.course
+;
+}
+   PUBLIC void setCourse(String course) {
+      this.course
+=      course}
+   PUBLIC int getNumber() {
+      return       this.number
+;
+}
+   PUBLIC void setNumber(int number) {
+      this.number
+=      number}
+   PUBLIC void init(String name, int age) {
+      this.name
+=      name      this.age
+=      age}
+   PUBLIC String getName() {
+      return       this.name
+;
+}
+   PUBLIC int getAge() {
+      return       this.age
+;
+}
+   PUBLIC void print() {
+write(,       this.name
+);write(,       this.age
+);}
+}

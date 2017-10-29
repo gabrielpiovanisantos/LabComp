@@ -1,0 +1,25 @@
+class A {
+   PUBLIC void m1(int n) {
+write(,       n);}
+   PUBLIC void m2(int n) {
+write(,       n);}
+   PUBLIC void m3(int n) {
+write(,       n);}
+}
+class Program {
+   PUBLIC void run() {
+      Aa;
+;
+write();
+write();
+write();
+write();
+      a=      new A ( )
+      a.m1( ast.ExprList@28d93b30 )
+=;
+      a.m2( ast.ExprList@1b6d3586 )
+=;
+      a.m3( ast.ExprList@4554617c )
+=;
+}
+}

@@ -1,0 +1,33 @@
+class A {
+   PUBLIC void m1(int n) {
+write(,       n);}
+}
+class B extends A {
+   PUBLIC void m2(int n) {
+      super.m1 ( )
+=;
+write(,       n);}
+}
+class C extends B {
+   PUBLIC void m3(int n) {
+      super.m2 ( )
+=;
+write(,       n);}
+   PUBLIC void m4(int n) {
+      this.m3( ast.ExprList@74a14482 )
+=;
+write(,       n);}
+}
+class Program {
+   PUBLIC void run() {
+      Cc;
+;
+write();
+write();
+write();
+write();
+      c=      new C ( )
+      c.m4( ast.ExprList@1540e19d )
+=;
+}
+}

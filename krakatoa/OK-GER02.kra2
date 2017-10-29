@@ -1,0 +1,17 @@
+class A {
+   PUBLIC void m() {
+write();write();write( + );write( - );write(( -       ) + );write( / );write( * );}
+}
+class Program {
+   PUBLIC void run() {
+      Aa;
+;
+write();
+write();
+write();
+write();
+      a=      new A ( )
+      a.m
+=;
+}
+}

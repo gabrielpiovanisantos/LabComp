@@ -20,7 +20,8 @@ public class AssignExprLocalDec extends Statement{
 		{
 			this.left.genKra(pw);
 			pw.print("=");
-			this.right.genKra(pw);
+			if(this.right != null)
+				this.right.genKra(pw);
 		}		
 	}
 }

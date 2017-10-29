@@ -1,0 +1,8 @@
+class A {
+   PUBLIC void m1() {
+write();}
+   PUBLIC void m2(int n) {
+write(      n);      this.m1
+=;
+}
+}

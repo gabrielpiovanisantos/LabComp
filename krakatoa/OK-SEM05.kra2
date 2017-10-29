@@ -1,0 +1,16 @@
+class A {
+   private int n;
+   PUBLIC void set(int pn) {
+      this.n
+=      pn}
+   PUBLIC int get() {
+      return       this.n
+;
+}
+}
+class B extends A {
+   PUBLIC void set(int pn) {
+write(      pn);      super.set (      pn )
+=;
+}
+}

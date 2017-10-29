@@ -1,0 +1,21 @@
+class A {
+   PUBLIC void m() {
+}
+}
+class B extends A {
+   PUBLIC void m() {
+}
+}
+class C extends B {
+   PUBLIC void p() {
+}
+}
+class Program {
+   PUBLIC void run() {
+      Cc;
+;
+      c=      new C ( )
+      c.m
+=;
+}
+}

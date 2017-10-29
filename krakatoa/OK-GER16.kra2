@@ -1,0 +1,17 @@
+class A {
+   private int k;
+   PUBLIC int get_A() {
+      return       this.k
+;
+}
+   PUBLIC void set(int k) {
+      this.k
+=      k}
+   PUBLIC void print() {
+write(      this.get_A
+);}
+   PUBLIC void init() {
+      this.set( ast.ExprList@4b67cf4d )
+=;
+}
+}

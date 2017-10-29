@@ -56,12 +56,24 @@ public class KraClass extends Type {
 		return privateMethodList;
 	}
 
-	public void addMethod(MethodDec amethod) {
+	public void addPublicMethod(MethodDec amethod) {
 		publicMethodList.add(amethod);
+	}
+	
+	public void addPrivateMethod(MethodDec amethod) {
+		privateMethodList.add(amethod);
 	}
 
 	public MethodDec searchPublicMethod(String methodName) {
 		for (MethodDec m : this.publicMethodList) {
+			if (m.getName().equals(methodName))
+				return m;
+		}
+		return null;
+	}
+	
+	public MethodDec searchPrivateMethod(String methodName) {
+		for (MethodDec m : this.privateMethodList) {
 			if (m.getName().equals(methodName))
 				return m;
 		}
@@ -97,7 +109,8 @@ public class KraClass extends Type {
 		}
 		if(this.publicMethodList!=null) {
 			for(MethodDec mdec: this.publicMethodList)
-				mdec.genKra(pw);
+				if(mdec != null)
+					mdec.genKra(pw);
 		}
 		pw.sub();
 		pw.println("}");

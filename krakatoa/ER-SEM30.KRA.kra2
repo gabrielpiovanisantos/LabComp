@@ -1,0 +1,18 @@
+class A {
+   PUBLIC void put() {
+}
+}
+class B extends A {
+   PUBLIC int put() {
+      return ;
+}
+}
+class Program {
+   PUBLIC void run() {
+      Aa;
+;
+      a=      new A ( )
+      a.put
+=;
+}
+}

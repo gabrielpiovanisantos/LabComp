@@ -1,0 +1,22 @@
+class A {
+   private int n;
+   PUBLIC void set(int pn) {
+write();      this.n
+=      pn}
+   PUBLIC int get() {
+      return       this.n
+;
+}
+   PUBLIC void print() {
+write();}
+}
+class B extends A {
+   PUBLIC void set(int pn) {
+write(      pn);      super.set (      pn )
+=;
+}
+   PUBLIC void p1() {
+write();}
+   PUBLIC void print() {
+write();}
+}

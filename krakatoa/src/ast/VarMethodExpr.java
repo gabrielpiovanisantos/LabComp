@@ -3,6 +3,14 @@ package ast;
 public class VarMethodExpr extends Expr {
 
 	private String firstId;
+	public String getFirstId() {
+		return firstId;
+	}
+
+	public String getId() {
+		return id;
+	}
+
 	private String id;
 	private ExprList exprList;
 	private String id22;
