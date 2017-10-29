@@ -23,7 +23,7 @@ public class ConstructExpr extends Expr {
 	
 	@Override
 	public void genKra(PW pw) {
-		pw.printlnIdent("new "+ this.className+ " ( )");
+		pw.println("new "+ this.className+ " ( )");
 
 	}
 

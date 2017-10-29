@@ -3,6 +3,7 @@ package ast;
 public class VarMethodExpr extends Expr {
 
 	private String firstId;
+
 	public String getFirstId() {
 		return firstId;
 	}
@@ -53,17 +54,19 @@ public class VarMethodExpr extends Expr {
 
 	@Override
 	public void genKra(PW pw) {
-		pw.printIdent(this.firstId);
+		pw.print(this.firstId);
 		if (this.id != null) {
 			pw.print("." + this.id);
 			if (this.id22 != null)
 				pw.print("." + this.id22);
-			if (this.exprList != null)
-				pw.println("( " + this.exprList + " )");
-			else
-				pw.println("");
-		}
-		else
-			pw.println("");
+			if (this.exprList != null) {
+				if (this.exprList.getExprList().isEmpty())
+					pw.print("()");
+				else
+					pw.print("( " + this.exprList + " )");
+			} else
+				pw.print("");
+		} else
+			pw.print("");
 	}
 }

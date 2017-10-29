@@ -21,7 +21,7 @@ public class LiteralInt extends Expr {
 
 	@Override
 	public void genKra(PW pw) {
-		// TODO Auto-generated method stub
+		pw.print(""+ value);
 		
 	}
 

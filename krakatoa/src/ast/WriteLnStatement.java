@@ -12,9 +12,9 @@ public class WriteLnStatement extends Statement {
 
 	@Override
 	public void genKra(PW pw) {
-		pw.print("write(");
+		pw.printIdent("write( ");
 		this.exprlist.genKra(pw);
-		pw.println(");");
+		pw.println(" );");
 		
 	}
 

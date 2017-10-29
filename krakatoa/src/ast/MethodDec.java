@@ -35,15 +35,16 @@ public class MethodDec {
 
 	public void genKra(PW pw)
 	{
-		pw.printIdent(this.qualifier.name() + " " + this.returnType.getName()
+		pw.printIdent(this.qualifier.name().toLowerCase() + " " + this.returnType.getName()
 						+ " " + this.getName() + "(");
 		if(this.param != null)
 			this.param.genKra(pw);
 		pw.println(") {");
 		pw.add();
 		if(this.stmtList != null)
-			this.stmtList.genKra(pw);
+			this.stmtList.genKra(pw);		
 		pw.sub();
-		pw.println("}");
+		pw.printlnIdent("}");
+		
 	}
 }

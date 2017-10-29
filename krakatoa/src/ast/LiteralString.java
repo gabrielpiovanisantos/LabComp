@@ -18,7 +18,7 @@ public class LiteralString extends Expr {
 
 	@Override
 	public void genKra(PW pw) {
-		// TODO Auto-generated method stub
+		pw.print(literalString);
 		
 	}
 

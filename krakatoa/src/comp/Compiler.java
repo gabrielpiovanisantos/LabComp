@@ -576,8 +576,7 @@ public class Compiler {
 
 				if (lexer.token != Symbol.SEMICOLON)
 					signalError.showError("';' expected", true);
-				else
-					lexer.nextToken();
+				
 			}
 			else if(lexer.token == Symbol.SEMICOLON){
 				if(left instanceof VarMethodExpr){
@@ -646,7 +645,7 @@ public class Compiler {
 	}
 
 	private ReturnStatement returnStatement() {
-
+	
 		ReturnStatement retStmt = new ReturnStatement();
 		lexer.nextToken();
 		retStmt.expr = expr();
@@ -1102,6 +1101,8 @@ public class Compiler {
 										"Type error: the type of the real parameter is not subclass of the type of the formal parameter");
 						}
 					}
+					if(exprList==null)
+						exprList = new ExprList();
 					return new VarMethodExpr("this", id, exprList, type);
 				} else if (lexer.token == Symbol.DOT) {
 					// "this" "." Id "." Id "(" [ ExpressionList ] ")"

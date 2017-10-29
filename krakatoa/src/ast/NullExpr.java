@@ -13,7 +13,7 @@ public class NullExpr extends Expr {
 
 @Override
 public void genKra(PW pw) {
-	pw.printIdent("null");
+	pw.print("null");
 	
 }
 

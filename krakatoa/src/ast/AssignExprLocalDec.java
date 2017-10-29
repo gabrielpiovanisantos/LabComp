@@ -1,6 +1,6 @@
 package ast;
 
-public class AssignExprLocalDec extends Statement{
+public class AssignExprLocalDec extends Statement {
 
 	public LocalDec localDec;
 	public Expr left;
@@ -9,19 +9,21 @@ public class AssignExprLocalDec extends Statement{
 	@Override
 	public void genC(PW pw) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void genKra(PW pw) {
-		if(this.localDec!=null)
+		if (this.localDec != null)
 			this.localDec.genkra(pw);
-		else
-		{
+		else {
+			pw.printIdent("");
 			this.left.genKra(pw);
-			pw.print("=");
-			if(this.right != null)
-				this.right.genKra(pw);
-		}		
+			if (this.right != null) {
+				pw.print(" = ");
+				if (this.right != null)
+					this.right.genKra(pw);
+			}
+		}
 	}
 }

@@ -13,7 +13,7 @@ public class LocalDec {
 	}
 
 	public void genkra(PW pw) {
-		pw.printIdent(this.type.getName());
+		pw.printIdent(this.type.getName()+" ");
 		int size = this.arrayVar.size();
 		for(Variable v: arrayVar)
 		{
@@ -21,7 +21,6 @@ public class LocalDec {
 			if(--size>0)
 				pw.print(", ");
 		}
-		pw.println(";");
 	}
 
 }

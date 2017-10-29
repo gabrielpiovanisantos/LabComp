@@ -23,7 +23,7 @@ public class LiteralBoolean extends Expr {
 
 	@Override
 	public void genKra(PW pw) {
-		// TODO Auto-generated method stub
+		pw.print(""+this.value);
 		
 	}
 
