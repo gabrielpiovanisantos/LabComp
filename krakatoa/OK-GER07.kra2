@@ -1,17 +1,17 @@
 class A {
-   PUBLIC void m() {
-write();}
+   public void m() {
+      write( 0 );
+   }
 }
 class Program {
-   PUBLIC void run() {
-      Aa;
+   public void run() {
+      A a;
+      write(  );
+      write( Ok-ger07 );
+      write( The output should be : );
+      write( 0 );
+      a = new A ( )
 ;
-write();
-write();
-write();
-write();
-      a=      new A ( )
-      a.m
-=;
-}
+      a.m;
+   }
 }

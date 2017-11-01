@@ -56,7 +56,7 @@ public class Compiler {
 		} catch (CompilerError e) {
 			// if there was an exception, there is a compilation signalError
 		} catch (RuntimeException e) {
-			e.printStackTrace();
+			//e.printStackTrace();	
 		}
 		return program;
 	}
@@ -651,8 +651,11 @@ public class Compiler {
 		retStmt.expr = expr();
 		if (this.currentMethod.getReturnType() == Type.voidType)
 			signalError.showError("This method cannot return a value ");
-		if (!retStmt.expr.getType().isCompatible(this.currentMethod.getReturnType()))
-			signalError.showError("Return expression type is not compatible with the method type");
+		Type t = retStmt.expr.getType();
+		if(t != null){
+			if (!t.isCompatible(this.currentMethod.getReturnType()))
+				signalError.showError("Return expression type is not compatible with the method type");
+		}
 		if (lexer.token != Symbol.SEMICOLON)
 			signalError.show(ErrorSignaller.semicolon_expected);
 		lexer.nextToken();
@@ -707,9 +710,12 @@ public class Compiler {
 		lexer.nextToken();
 		write.exprlist = exprList();
 		for (Expr e : write.exprlist.getExprList()) {
-			if (e.getType() == Type.booleanType || (this.symbolTable.getInGlobal(e.getType().getName()) != null)) {
-				this.signalError.showError("command write dos not accept boolean expression" + "or objects");
-				break;
+			Type t = e.getType();
+			if(t!=null){
+				if (e.getType() == Type.booleanType || (this.symbolTable.getInGlobal(e.getType().getName()) != null)) {
+					this.signalError.showError("command write dos not accept boolean expression" + "or objects");
+					break;
+				}
 			}
 
 		}

@@ -1,4 +1,4 @@
 class Program {
-   PUBLIC void run() {
-}
+   public void run() {
+   }
 }

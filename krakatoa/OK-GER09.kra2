@@ -1,33 +1,35 @@
 class A {
-   PUBLIC void m1(int n) {
-write(,       n);}
+   public void m1(int n) {
+      write( 1, n );
+   }
 }
 class B extends A {
-   PUBLIC void m2(int n) {
-      super.m1 ( )
-=;
-write(,       n);}
+   public void m2(int n) {
+            super.m1 (1 )
+;
+      write( 2, n );
+   }
 }
 class C extends B {
-   PUBLIC void m3(int n) {
-      super.m2 ( )
-=;
-write(,       n);}
-   PUBLIC void m4(int n) {
-      this.m3( ast.ExprList@74a14482 )
-=;
-write(,       n);}
+   public void m3(int n) {
+            super.m2 (2 )
+;
+      write( 3, n );
+   }
+   public void m4(int n) {
+      this.m3( ast.ExprList@9e89d68 );
+      write( 4, n );
+   }
 }
 class Program {
-   PUBLIC void run() {
-      Cc;
+   public void run() {
+      C c;
+      write(  );
+      write( Ok-ger09 );
+      write( The output should be : );
+      write( 1 1 2 2 3 3 4 4 );
+      c = new C ( )
 ;
-write();
-write();
-write();
-write();
-      c=      new C ( )
-      c.m4( ast.ExprList@1540e19d )
-=;
-}
+      c.m4( ast.ExprList@3b192d32 );
+   }
 }

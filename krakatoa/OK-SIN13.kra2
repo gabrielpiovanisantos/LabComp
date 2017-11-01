@@ -1,4 +1,5 @@
 class Program {
-   PUBLIC void run() {
-write(( +       ) + (-      ));}
+   public void run() {
+      write( (1 + 2      ) + (-3      ) );
+   }
 }

@@ -1,47 +1,45 @@
 class A {
    private int k;
-   PUBLIC void m1(int n) {
-      this.k
-=write(      this.k
-,       n);}
-   PUBLIC int getK() {
-      return       this.k
-;
-}
+   public void m1(int n) {
+      this.k = 1;
+      write( this.k, n );
+   }
+   public int getK() {
+      return this.k;
+   }
 }
 class B extends A {
    private int k;
-   PUBLIC void m2(int n) {
-      this.k
-=      super.m1 ( )
-=;
-write(      this.k
-,       n);}
-   PUBLIC int getK() {
-      return       this.k
+   public void m2(int n) {
+      this.k = 2;
+            super.m1 (1 )
 ;
-}
+      write( this.k, n );
+   }
+   public int getK() {
+      return this.k;
+   }
 }
 class C extends B {
-   PUBLIC void m3(int n) {
-      super.m2 ( )
-=;
-write(,       n);}
-   PUBLIC void m4(int n) {
-      this.m3( ast.ExprList@677327b6 )
-=;
-write(,       n);}
+   public void m3(int n) {
+            super.m2 (2 )
+;
+      write( 3, n );
+   }
+   public void m4(int n) {
+      this.m3( ast.ExprList@16f65612 );
+      write( 4, n );
+   }
 }
 class Program {
-   PUBLIC void run() {
-      Cc;
+   public void run() {
+      C c;
+      write(  );
+      write( Ok-ger10 );
+      write( The output should be : );
+      write( 1 1 2 2 3 3 4 4 );
+      c = new C ( )
 ;
-write();
-write();
-write();
-write();
-      c=      new C ( )
-      c.m4( ast.ExprList@14ae5a5 )
-=;
-}
+      c.m4( ast.ExprList@311d617d );
+   }
 }

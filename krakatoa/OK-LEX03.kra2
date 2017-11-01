@@ -1,13 +1,12 @@
 class A {
-   PUBLIC void m() {
-}
+   public void m() {
+   }
 }
 class Program {
-   PUBLIC void run() {
-      Aa;
+   public void run() {
+      A a;
+      a = new A ( )
 ;
-      a=      new A ( )
-      a.m
-=;
-}
+      a.m;
+   }
 }

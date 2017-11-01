@@ -1,9 +1,12 @@
 class Program {
-   PUBLIC void run() {
-      inta, b;
-;
-      booleane, f;
-;
-      a=      b=      e=      f=      if ( (      a ==       b      ) && (      a ==       ) && ( ==       b      ) && (      a !=       b      ) && (      e ==       f      ) && ( ==       f      ) && (      e !=       f      ) && ( !=       f      )      )
-write();}
+   public void run() {
+      int a, b;
+      boolean e, f;
+      a = 1;
+      b = 1;
+      e = true;
+      f = false;
+      if ( (a == b      ) && (a == 1      ) && (1 == b      ) && (a != b      ) && (e == f      ) && (true == f      ) && (e != f      ) && (true != f      )      )
+         write( impossivel );
+   }
 }

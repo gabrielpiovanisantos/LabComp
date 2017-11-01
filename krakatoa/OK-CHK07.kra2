@@ -3,34 +3,95 @@ class Person {
    private int number;
    private int age;
    private String name;
-   PUBLIC String getCourse() {
-      return       this.course
-;
+   public String getCourse() {
+      return this.course;
+   }
+   public void setCourse(String course) {
+      this.course = course;
+   }
+   public int getNumber() {
+      return this.number;
+   }
+   public void setNumber(int number) {
+      this.number = number;
+   }
+   public void init(String name, int age) {
+      this.name = name;
+      this.age = age;
+   }
+   public String getName() {
+      return this.name;
+   }
+   public int getAge() {
+      return this.age;
+   }
+   public void print() {
+      write( Name = , this.name );
+      write( Age = , this.age );
+   }
 }
-   PUBLIC void setCourse(String course) {
-      this.course
-=      course}
-   PUBLIC int getNumber() {
-      return       this.number
-;
+class Group {
+   private Person first;
+   private Person second;
+   public void set(Person first, Person second) {
+      this.first = first;
+      this.second = second;
+   }
+   public Person getFirst() {
+      return this.first;
+   }
+   public Person getSecond() {
+      return this.second;
+   }
+   public void print() {
+      write( First: , this.first.getName );
+      write( Second: , this.second.getName );
+   }
 }
-   PUBLIC void setNumber(int number) {
-      this.number
-=      number}
-   PUBLIC void init(String name, int age) {
-      this.name
-=      name      this.age
-=      age}
-   PUBLIC String getName() {
-      return       this.name
-;
+class University {
+   private String name;
+   private int numberOfStudents;
+   private String city;
+   public void init(String name, String city, int numberOfStudents) {
+      this.name = name;
+      this.city = city;
+      this.numberOfStudents = numberOfStudents;
+   }
+   public void print() {
+      write( this.name );
+      write( this.city );
+      write( this.numberOfStudents );
+   }
 }
-   PUBLIC int getAge() {
-      return       this.age
+class Program {
+   public void run() {
+      University s;
+      Person joao;
+      Person maria;
+      Group g;
+      s = new University ( )
 ;
-}
-   PUBLIC void print() {
-write(,       this.name
-);write(,       this.age
-);}
+      s.init( ast.ExprList@65ae6ba4 );
+      s.print;
+      write(  );
+      joao = new Person ( )
+;
+      joao.init( ast.ExprList@48cf768c );
+      joao.setCourse( ast.ExprList@59f95c5d );
+      joao.setNumber( ast.ExprList@5ccd43c2 );
+      maria = new Person ( )
+;
+      maria.init( ast.ExprList@4aa8f0b4 );
+      maria.setCourse( ast.ExprList@7960847b );
+      maria.setNumber( ast.ExprList@6a6824be );
+      joao.print;
+      write(  );
+      maria.print;
+      write(  );
+      g = new Group ( )
+;
+      g.set( ast.ExprList@5c8da962 );
+      g.print;
+      write(  );
+   }
 }

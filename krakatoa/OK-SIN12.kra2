@@ -1,6 +1,7 @@
 class Program {
-   PUBLIC void run() {
-      inta;
-;
-      a=write(-      a);}
+   public void run() {
+      int a;
+      a = 1;
+      write( -a );
+   }
 }

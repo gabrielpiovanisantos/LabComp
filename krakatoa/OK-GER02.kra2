@@ -1,17 +1,23 @@
 class A {
-   PUBLIC void m() {
-write();write();write( + );write( - );write(( -       ) + );write( / );write( * );}
+   public void m() {
+      write( 6 );
+      write( 1 );
+      write( 1 + 1 );
+      write( 4 - 1 );
+      write( (6 - 3      ) + 1 );
+      write( 10 / 2 );
+      write( 2 * 3 );
+   }
 }
 class Program {
-   PUBLIC void run() {
-      Aa;
+   public void run() {
+      A a;
+      write(  );
+      write( Ok-ger02 );
+      write( The output should be : );
+      write( 6 1 2 3 4 5 6 );
+      a = new A ( )
 ;
-write();
-write();
-write();
-write();
-      a=      new A ( )
-      a.m
-=;
-}
+      a.m;
+   }
 }

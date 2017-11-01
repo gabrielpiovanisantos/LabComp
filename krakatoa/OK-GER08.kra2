@@ -1,25 +1,25 @@
 class A {
-   PUBLIC void m1(int n) {
-write(,       n);}
-   PUBLIC void m2(int n) {
-write(,       n);}
-   PUBLIC void m3(int n) {
-write(,       n);}
+   public void m1(int n) {
+      write( 1, n );
+   }
+   public void m2(int n) {
+      write( 2, n );
+   }
+   public void m3(int n) {
+      write( 3, n );
+   }
 }
 class Program {
-   PUBLIC void run() {
-      Aa;
+   public void run() {
+      A a;
+      write(  );
+      write( Ok-ger08 );
+      write( The output should be : );
+      write( 1 1 2 2 3 3 );
+      a = new A ( )
 ;
-write();
-write();
-write();
-write();
-      a=      new A ( )
-      a.m1( ast.ExprList@28d93b30 )
-=;
-      a.m2( ast.ExprList@1b6d3586 )
-=;
-      a.m3( ast.ExprList@4554617c )
-=;
-}
+      a.m1( ast.ExprList@2c13da15 );
+      a.m2( ast.ExprList@77556fd );
+      a.m3( ast.ExprList@368239c8 );
+   }
 }

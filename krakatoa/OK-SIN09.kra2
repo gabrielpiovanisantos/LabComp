@@ -1,23 +1,20 @@
 class A {
    private int n;
    private int k;
-   PUBLIC int m() {
-      this.m2( ast.ExprList@330bedb4 )
-=;
-      return       this.m1
- +       this.k
-;
-}
-   PUBLIC void init() {
-      this.k
-=      this.n
-=}
+   public int m() {
+      this.m2( ast.ExprList@11028347 );
+      return this.m1() + this.k;
+   }
+   public void init() {
+      this.k = 1;
+      this.n = 0;
+   }
 }
 class Program {
-   PUBLIC void run() {
-      Aa;
+   public void run() {
+      A a;
+      a = new A ( )
 ;
-      a=      new A ( )
-write(      a.m
-);}
+      write( a.m );
+   }
 }

@@ -1,23 +1,20 @@
 class A {
    private int n;
-   PUBLIC void set(int pn) {
-      intn;
-;
-      this.n
-=      pn}
-   PUBLIC int put(int n, String set) {
-      booleanput;
-;
-      this.n
-=      n      return       n;
-}
+   public void set(int pn) {
+      int n;
+      this.n = pn;
+   }
+   public int put(int n, String set) {
+      boolean put;
+      this.n = n;
+      return n;
+   }
 }
 class Program {
-   PUBLIC void run() {
-      Aa;
+   public void run() {
+      A a;
+      a = new A ( )
 ;
-      a=      new A ( )
-      a.set( ast.ExprList@6d6f6e28 )
-=;
-}
+      a.set( ast.ExprList@2a33fae0 );
+   }
 }

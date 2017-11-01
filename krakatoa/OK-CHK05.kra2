@@ -1,21 +1,20 @@
 class A {
-   PUBLIC void m() {
-}
+   public void m() {
+   }
 }
 class B extends A {
-   PUBLIC void m() {
-}
+   public void m() {
+   }
 }
 class C extends B {
-   PUBLIC void p() {
-}
+   public void p() {
+   }
 }
 class Program {
-   PUBLIC void run() {
-      Cc;
+   public void run() {
+      C c;
+      c = new C ( )
 ;
-      c=      new C ( )
-      c.m
-=;
-}
+      c.m;
+   }
 }
