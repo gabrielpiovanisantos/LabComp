@@ -802,11 +802,11 @@ public class Compiler {
 				|| op == Symbol.GT) {
 			lexer.nextToken();
 			Expr right = simpleExpr();
-
-			if (left.getType() != right.getType()) {
-				signalError.showError(
-						"Incompatible types cannot be compared with '==' because the result will always be 'false'");
-			}
+			Type l = left.getType();
+			Type r = right.getType();
+			
+			if (!right.getType().isCompatible(left.getType()) && !left.getType().isCompatible(right.getType()))
+				signalError.showError("Incompatible types cannot be compared with '==' because the result will always be 'false'");
 
 			left = new CompositeExpr(left, op, right);
 		}

@@ -35,8 +35,14 @@ abstract public class Type {
 			return other == booleanType;
 		else if(this == intType)
 			return other == intType;
-		else if(this == stringType)
+		else if(this == stringType){
+			if(other == undefinedType)
+				return true;
 			return other == stringType;
+		}
+		else if(this == undefinedType){
+			return other == stringType;
+		}
 		else if(this == voidType)
 			return false;
 		else if(this instanceof KraClass)

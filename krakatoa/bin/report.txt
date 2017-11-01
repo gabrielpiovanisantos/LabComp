@@ -2,7 +2,7 @@ Relatório do Compilador
 
 1 de um total de 122 erros que deveriam ser sinalizados não o foram (0%)
 0 erros foram sinalizados na linha errada (0%)
-13 erros foram sinalizados em 63 arquivos sem erro (20%)
+11 erros foram sinalizados em 63 arquivos sem erro (17%)
 
 Erros que deveriam ser sinalizados mas não foram:
 
@@ -20,13 +20,9 @@ OK-GER05.KRA, 30, variable has already been declared
 
 OK-GER22.KRA, 35, 'while' expected
 
-OK-SEM03.KRA, 18, Incompatible types cannot be compared with '==' because the result will always be 'false'
-
 OK-SEM08.KRA, 48, variable has already been declared
 
 OK-SEM12.KRA, 22, Identifier expected
-
-OK-SEM14.KRA, 27, Incompatible types cannot be compared with '==' because the result will always be 'false'
 
 OK-SIN06.KRA, 17, Method 'm' was not found in the public interface of 'A' or its superclasses
 
