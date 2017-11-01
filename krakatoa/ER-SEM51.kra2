@@ -12,6 +12,6 @@ class Program {
       A a;
       a = new A ( )
 ;
-      a.put( ast.ExprList@5fdef03a );
+      a.put( ast.ExprList@4aa298b7 );
    }
 }

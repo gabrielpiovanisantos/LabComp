@@ -2,7 +2,7 @@ Relatório do Compilador
 
 1 de um total de 122 erros que deveriam ser sinalizados não o foram (0%)
 0 erros foram sinalizados na linha errada (0%)
-21 erros foram sinalizados em 63 arquivos sem erro (33%)
+13 erros foram sinalizados em 63 arquivos sem erro (20%)
 
 Erros que deveriam ser sinalizados mas não foram:
 
@@ -12,33 +12,17 @@ Um ou mais arquivos de teste tinham erros, mas estes foram sinalizados nos númer
 ######################################################
 Erros que foram sinalizados mas não deveriam ter sido:
 
-OK-CHK02.KRA, 46, a non void method must have a return statement
-
 OK-CHK04.KRA, 26, variable not declared
 
 OK-CHK06.KRA, 18, Method 'm' was not found in the public interface of 'A' or its superclasses
 
 OK-GER05.KRA, 30, variable has already been declared
 
-OK-GER11.KRA, 48, Expressions of diferents types
-
-OK-GER13.KRA, 71, a non void method must have a return statement
-
-OK-GER14.KRA, 91, Expressions of diferents types
-
-OK-GER16.KRA, 44, Method get_A is not a public method of currentclass or not exist
-
 OK-GER22.KRA, 35, 'while' expected
 
 OK-SEM03.KRA, 18, Incompatible types cannot be compared with '==' because the result will always be 'false'
 
-OK-SEM05.KRA, 51, a non void method must have a return statement
-
 OK-SEM08.KRA, 48, variable has already been declared
-
-OK-SEM09.KRA, 14, Expressions of diferents types
-
-OK-SEM10.KRA, 50, Expressions of diferents types
 
 OK-SEM12.KRA, 22, Identifier expected
 

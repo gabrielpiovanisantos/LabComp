@@ -8,6 +8,6 @@ class Program {
       A a;
       a = new A ( )
 ;
-      write( a.m( ast.ExprList@707f7052 ) );
+      write( a.m( ast.ExprList@511d50c0 ) );
    }
 }

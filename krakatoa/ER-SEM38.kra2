@@ -1,17 +1,13 @@
 class A {
-   public void put() {
-   }
 }
 class B extends A {
-   public int put() {
-      return 0;
-   }
 }
 class Program {
    public void run() {
       A a;
+      B b;
       a = new A ( )
 ;
-      a.put;
+      b = a;
    }
 }

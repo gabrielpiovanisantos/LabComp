@@ -278,7 +278,8 @@ public class Compiler {
 						//break;
 					//}
 					
-					if(!superClasspublicMethodList.get(i).getReturnType().equals(type)){
+					if(!superClasspublicMethodList.get(i).getReturnType().equals(type) && 
+							superClasspublicMethodList.get(i).getQualifier().equals(qualifier)){
 						signalError.showError("Method '"+superClasspublicMethodList.get(i).getName()+"' of subclass '"+ this.currentClass.getName()+"' has a signature different from method inherited from superclass '"+ superclass.getName()+"'");
 						break;
 					}
@@ -305,10 +306,22 @@ public class Compiler {
 		this.currentMethod.stmtList = statementList();
 		if (this.currentMethod.getReturnType().getName().compareToIgnoreCase("void") != 0) {
 			boolean retflag = false;
+			IfStatement ifstmt;
 			for (Statement m : this.currentMethod.stmtList.getStmtlist()) {
 				if (m.getClass() == ReturnStatement.class) {
 					retflag = true;
 					break;
+				}
+				else if(m.getClass() == IfStatement.class){
+					ifstmt = (IfStatement)m;
+					if(ifstmt.stmt.getClass() == ReturnStatement.class){
+						retflag = true;
+						break;
+					}
+					else if(ifstmt.elseStmt.getClass() == ReturnStatement.class){
+						retflag = true;
+						break;
+					}
 				}
 			}
 			if (!retflag)
@@ -333,7 +346,7 @@ public class Compiler {
 		if (lexer.token != Symbol.IDENT)
 			signalError.showError("Identifier expected");
 		Variable v = new Variable(lexer.getStringValue(), type);
-		if (symbolTable.getInLocal(v.getName()) != null)
+		if (this.symbolTable.getInLocal(v.getName()) != null)
 			signalError.showError("variable has already been declared");
 		arrayVar.add(v);
 		this.symbolTable.putInLocal(v.getName(), v);
@@ -567,11 +580,11 @@ public class Compiler {
 				right = expr();
 				Type r = right.getType();
 				Type l = left.getType();
-
+			
 				if (r == Type.undefinedType) {
 					if (l.isDefaultType())
 						signalError.showError("Expressions of diferents types");
-				} else if (l != r)
+				} else if (!r.isCompatible(l))
 					signalError.showError("Expressions of diferents types");
 
 				if (lexer.token != Symbol.SEMICOLON)
@@ -678,6 +691,7 @@ public class Compiler {
 			if (lexer.token != Symbol.IDENT)
 				signalError.show(ErrorSignaller.ident_expected);
 			String name = lexer.getStringValue();
+			
 			if (this.symbolTable.getInLocal(name) == null)
 				this.signalError.showError("variable not declared");
 			if (this.symbolTable.getInLocal(name).getType() != Type.intType
@@ -1083,8 +1097,16 @@ public class Compiler {
 					 */
 					exprList = this.realParameters();
 					MethodDec amethod = this.currentClass.searchPublicMethod(id);
+					if(amethod == null){
+						KraClass superclass1 = this.currentClass.getSuperclass();
+						while((superclass1 != null) && (amethod == null)){
+							amethod = superclass1.searchPublicMethod(id);
+							superclass1 = superclass1.getSuperclass();						
+						}
+					}
 					if(amethod == null)
 						amethod = this.currentClass.searchPrivateMethod(id);
+					
 					Type type = null;
 					if (amethod == null)
 						signalError.showError("Method " + id + " is not a public method of currentclass or not exist");
@@ -1113,11 +1135,12 @@ public class Compiler {
 				} else if (lexer.token == Symbol.DOT) {
 					// "this" "." Id "." Id "(" [ ExpressionList ] ")"
 					lexer.nextToken();
-					if (lexer.token != Symbol.IDENT)
+					if (lexer.token != Symbol.IDENT){
 						signalError.showError("Identifier expected");
+					}
 					String id2 = lexer.getStringValue();
 					lexer.nextToken();
-					if (lexer.token != Symbol.LEFTPAR)
+					if(lexer.token != Symbol.LEFTPAR)
 						this.signalError.showError(" ( expected");
 					exprList = this.realParameters();
 					if (lexer.token != Symbol.RIGHTPAR)

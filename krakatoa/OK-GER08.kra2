@@ -18,8 +18,8 @@ class Program {
       write( 1 1 2 2 3 3 );
       a = new A ( )
 ;
-      a.m1( ast.ExprList@2c13da15 );
-      a.m2( ast.ExprList@77556fd );
-      a.m3( ast.ExprList@368239c8 );
+      a.m1( ast.ExprList@7f31245a );
+      a.m2( ast.ExprList@6d6f6e28 );
+      a.m3( ast.ExprList@135fbaa4 );
    }
 }

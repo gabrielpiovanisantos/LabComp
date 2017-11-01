@@ -27,7 +27,7 @@ class C extends B {
       write( 3, n );
    }
    public void m4(int n) {
-      this.m3( ast.ExprList@16f65612 );
+      this.m3( ast.ExprList@2503dbd3 );
       write( 4, n );
    }
 }
@@ -40,6 +40,6 @@ class Program {
       write( 1 1 2 2 3 3 4 4 );
       c = new C ( )
 ;
-      c.m4( ast.ExprList@311d617d );
+      c.m4( ast.ExprList@4b67cf4d );
    }
 }

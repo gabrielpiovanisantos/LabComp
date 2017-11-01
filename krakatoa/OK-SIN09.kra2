@@ -2,7 +2,7 @@ class A {
    private int n;
    private int k;
    public int m() {
-      this.m2( ast.ExprList@11028347 );
+      this.m2( ast.ExprList@60e53b93 );
       return this.m1() + this.k;
    }
    public void init() {

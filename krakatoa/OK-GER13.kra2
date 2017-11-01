@@ -1,22 +1,26 @@
 class A {
    private int n;
-   PUBLIC void set(int pn) {
-write();      this.n
-=      pn}
-   PUBLIC int get() {
-      return       this.n
-;
-}
-   PUBLIC void print() {
-write();}
+   public void set(int pn) {
+      write( 1 );
+      this.n = pn;
+   }
+   public int get() {
+      return this.n;
+   }
+   public void print() {
+      write( A );
+   }
 }
 class B extends A {
-   PUBLIC void set(int pn) {
-write(      pn);      super.set (      pn )
-=;
-}
-   PUBLIC void p1() {
-write();}
-   PUBLIC void print() {
-write();}
+   public void set(int pn) {
+      write( pn );
+            super.set (pn )
+;
+   }
+   public void p1() {
+      write( 2 );
+   }
+   public void print() {
+      write( B );
+   }
 }

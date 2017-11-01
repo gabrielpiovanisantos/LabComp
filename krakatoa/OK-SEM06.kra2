@@ -15,6 +15,6 @@ class Program {
       A a;
       a = new A ( )
 ;
-      a.set( ast.ExprList@2a33fae0 );
+      a.set( ast.ExprList@5cad8086 );
    }
 }

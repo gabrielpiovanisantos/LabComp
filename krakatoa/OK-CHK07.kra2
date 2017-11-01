@@ -71,26 +71,26 @@ class Program {
       Group g;
       s = new University ( )
 ;
-      s.init( ast.ExprList@65ae6ba4 );
+      s.init( ast.ExprList@7d4991ad );
       s.print;
       write(  );
       joao = new Person ( )
 ;
-      joao.init( ast.ExprList@48cf768c );
-      joao.setCourse( ast.ExprList@59f95c5d );
-      joao.setNumber( ast.ExprList@5ccd43c2 );
+      joao.init( ast.ExprList@28d93b30 );
+      joao.setCourse( ast.ExprList@1b6d3586 );
+      joao.setNumber( ast.ExprList@4554617c );
       maria = new Person ( )
 ;
-      maria.init( ast.ExprList@4aa8f0b4 );
-      maria.setCourse( ast.ExprList@7960847b );
-      maria.setNumber( ast.ExprList@6a6824be );
+      maria.init( ast.ExprList@74a14482 );
+      maria.setCourse( ast.ExprList@1540e19d );
+      maria.setNumber( ast.ExprList@677327b6 );
       joao.print;
       write(  );
       maria.print;
       write(  );
       g = new Group ( )
 ;
-      g.set( ast.ExprList@5c8da962 );
+      g.set( ast.ExprList@14ae5a5 );
       g.print;
       write(  );
    }
