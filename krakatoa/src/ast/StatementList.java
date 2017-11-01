@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 import java.util.ArrayList;
@@ -21,8 +27,9 @@ public class StatementList {
 	public void genKra(PW pw) {
 		for(Statement s: stmtlist)
 		{
-			if(s != null)
-				s.genKra(pw);			
+			if(s != null) {
+				s.genKra(pw);
+			}
 		}		
 	}
 

@@ -1,4 +1,12 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
+
+import java.util.*;
 
 import lexer.Symbol;
 
@@ -21,7 +29,6 @@ public class MethodDec {
 	private Symbol qualifier;
 	public FormalParamDec param;
 	public StatementList stmtList;
-	
 
 	public MethodDec(Type returntype, String name, Symbol qualifier) {
 		this.returnType = returntype;

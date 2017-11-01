@@ -1,56 +1,32 @@
 Relatório do Compilador
 
 1 de um total de 122 erros que deveriam ser sinalizados não o foram (0%)
-0 erros foram sinalizados na linha errada (0%)
-20 erros foram sinalizados em 63 arquivos sem erro (31%)
+1 erros foram sinalizados na linha errada (0%)
+5 erros foram sinalizados em 63 arquivos sem erro (7%)
 
 Erros que deveriam ser sinalizados mas não foram:
 
 ER-SEM51.KRA, 17, Method 'put' is being redefined in subclass 'B' with a signature different from the method of superclass 'A' (comp.Compiler.methodDec())
 
-Um ou mais arquivos de teste tinham erros, mas estes foram sinalizados nos números de linhas corretos
+######################################################
+Erros que foram sinalizados na linha errada:
+
+ER-SIN62.KRA
+    correto:    17, 'while' expected (comp.Compiler.doWhileStatement())
+    sinalizado: 16, 'while' expected
+
 ######################################################
 Erros que foram sinalizados mas não deveriam ter sido:
 
-OK-CHK02.KRA, 46, a non void method must have a return statement
-
-OK-CHK04.KRA, 26, variable not declared
-
 OK-CHK06.KRA, 18, Method 'm' was not found in the public interface of 'A' or its superclasses
-
-OK-GER05.KRA, 30, variable has already been declared
-
-OK-GER11.KRA, 48, Expressions of diferents types
-
-OK-GER13.KRA, 71, a non void method must have a return statement
-
-OK-GER14.KRA, 91, Expressions of diferents types
-
-OK-GER16.KRA, 44, Method get_A is not a public method of currentclass or not exist
-
-OK-GER22.KRA, 35, 'while' expected
-
-OK-SEM03.KRA, 18, Incompatible types cannot be compared with '==' because the result will always be 'false'
-
-OK-SEM05.KRA, 51, a non void method must have a return statement
-
-OK-SEM08.KRA, 48, variable has already been declared
-
-OK-SEM09.KRA, 14, Expressions of diferents types
-
-OK-SEM10.KRA, 50, Expressions of diferents types
 
 OK-SEM12.KRA, 22, Identifier expected
 
-OK-SEM14.KRA, 27, Incompatible types cannot be compared with '==' because the result will always be 'false'
-
 OK-SIN06.KRA, 17, Method 'm' was not found in the public interface of 'A' or its superclasses
 
-OK-SIN10.KRA, 31, variable not declared
+OK-SIN07.KRA, 93, Incompatible types cannot be compared with '==' because the result will always be 'false'
 
 OK-SIN14.KRA, 39,  ) expected
-
-OK-SIN16.KRA, 31, 'while' expected
 
 ######################################################
 Em todos os testes abaixo, o compilador sinalizou o erro na linha correta (quando o teste tinha erros) ou não sinalizou o erro (quando o teste NÃO tinha erros). Mas é necessário conferir se as mensagens emitidas pelo compilador são compatíveis com as mensagens de erro sugeridas pelas chamadas aos metaobjetos dos testes. 
@@ -403,12 +379,12 @@ The 'ce' message is:      "Class 'A' was not found"
 
 
 ER-SEM88.KRA
-The compiler message was: "boolean expression expected"
+The compiler message was: " boolean expression expected"
 The 'ce' message is:      "boolean expression expected in a do-while statement"
 
 
 ER-SEM89.KRA
-The compiler message was: "boolean expression expected"
+The compiler message was: " boolean expression expected"
 The 'ce' message is:      "boolean expression expected in a do-while statement"
 
 
@@ -643,18 +619,13 @@ The 'ce' message is:      "'{' expected after 'do'"
 
 
 ER-SIN60.KRA
-The compiler message was: "( expected"
+The compiler message was: "'(' expected"
 The 'ce' message is:      "'(' expected after 'while'"
 
 
 ER-SIN61.KRA
-The compiler message was: ") expected"
+The compiler message was: "')' expected"
 The 'ce' message is:      "')' expected after 'while' expression"
-
-
-ER-SIN62.KRA
-The compiler message was: "'while' expected"
-The 'ce' message is:      "'while' expected"
 
 
 ER-SIN63.KRA

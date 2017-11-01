@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 public class ConstructExpr extends Expr {
@@ -23,7 +29,7 @@ public class ConstructExpr extends Expr {
 	
 	@Override
 	public void genKra(PW pw) {
-		pw.println("new "+ this.className+ " ( )");
+		pw.print("new "+ this.className+ "()");
 
 	}
 

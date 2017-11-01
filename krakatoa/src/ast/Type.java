@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 abstract public class Type {
@@ -35,14 +41,8 @@ abstract public class Type {
 			return other == booleanType;
 		else if(this == intType)
 			return other == intType;
-		else if(this == stringType){
-			if(other == undefinedType)
-				return true;
+		else if(this == stringType)
 			return other == stringType;
-		}
-		else if(this == undefinedType){
-			return other == stringType;
-		}
 		else if(this == voidType)
 			return false;
 		else if(this instanceof KraClass)

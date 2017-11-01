@@ -1,20 +1,27 @@
+
 class A {
+
    private int n;
    private int k;
    public int m() {
-      this.m2( ast.ExprList@4b67cf4d );
-      return this.m1() + this.k;
+      this.m2( 0 ) ;
+      return this.m1() + this.k ;
    }
+
    public void init() {
-      this.k = 1;
-      this.n = 0;
+      this.k = 1 ;
+      this.n = 0 ;
    }
+
 }
+
 class Program {
+
    public void run() {
-      A a;
-      a = new A ( )
-;
+      A a ;
+      a = new A() ;
       write( a.m );
    }
+
 }
+

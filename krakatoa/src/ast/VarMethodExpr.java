@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 public class VarMethodExpr extends Expr {
@@ -59,11 +65,16 @@ public class VarMethodExpr extends Expr {
 			pw.print("." + this.id);
 			if (this.id22 != null)
 				pw.print("." + this.id22);
-			if (this.exprList != null) {
-				if (this.exprList.getExprList().isEmpty())
-					pw.print("()");
-				else
-					pw.print("( " + this.exprList + " )");
+			if (this.type != null) {
+				if (this.exprList != null) {
+					if (this.exprList.getExprList().isEmpty())
+						pw.print("()");
+					else {
+						pw.print("( ");
+						this.exprList.genKra(pw);
+						pw.print(" )");
+					}
+				}
 			} else
 				pw.print("");
 		} else

@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 import java.util.ArrayList;
@@ -13,7 +19,7 @@ public class LocalDec {
 	}
 
 	public void genkra(PW pw) {
-		pw.printIdent(this.type.getName()+" ");
+		pw.print(this.type.getName()+" ");
 		int size = this.arrayVar.size();
 		for(Variable v: arrayVar)
 		{

@@ -1,17 +1,21 @@
+
 class Program {
+
    public void run() {
-;
-;
-;
-;
-;
+ ;
+ ;
+ ;
+ ;
+ ;
       write( 1 );
-;
-;
-      if ( true      )
-;
+ ;
+ ;
+      if ( true)
+ ;
       while ( false )
-;
-;
+ ;
+ ;
    }
+
 }
+

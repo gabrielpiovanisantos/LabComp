@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 public class NullExpr extends Expr {
@@ -13,7 +19,7 @@ public class NullExpr extends Expr {
 
 @Override
 public void genKra(PW pw) {
-	pw.print("null");
+	pw.print(" null ");
 	
 }
 

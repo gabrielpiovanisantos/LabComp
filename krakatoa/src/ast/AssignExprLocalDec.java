@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 public class AssignExprLocalDec extends Statement {
@@ -14,10 +20,10 @@ public class AssignExprLocalDec extends Statement {
 
 	@Override
 	public void genKra(PW pw) {
+		pw.printIdent("");
 		if (this.localDec != null)
 			this.localDec.genkra(pw);
 		else {
-			pw.printIdent("");
 			this.left.genKra(pw);
 			if (this.right != null) {
 				pw.print(" = ");

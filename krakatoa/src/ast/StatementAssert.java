@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 public class StatementAssert extends Statement {
@@ -35,7 +41,7 @@ public class StatementAssert extends Statement {
 	private String message;
 	@Override
 	public void genKra(PW pw) {
-		pw.printIdent("assert");
+		pw.printIdent("assert ");
 		this.expr.genKra(pw);
 		pw.println(", " + this.message);
 	}

@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 import java.util.ArrayList;
@@ -59,7 +65,7 @@ public class KraClass extends Type {
 	public void addPublicMethod(MethodDec amethod) {
 		publicMethodList.add(amethod);
 	}
-	
+
 	public void addPrivateMethod(MethodDec amethod) {
 		privateMethodList.add(amethod);
 	}
@@ -71,7 +77,7 @@ public class KraClass extends Type {
 		}
 		return null;
 	}
-	
+
 	public MethodDec searchPrivateMethod(String methodName) {
 		for (MethodDec m : this.privateMethodList) {
 			if (m.getName().equals(methodName))
@@ -84,7 +90,7 @@ public class KraClass extends Type {
 		this.instanceVariableList.add(instanceVariable);
 
 	}
-	
+
 	public InstanceVariable searchVariable(String varName) {
 		for (InstanceVariable m : this.instanceVariableList) {
 			if (m.getName().equals(varName))
@@ -94,23 +100,23 @@ public class KraClass extends Type {
 	}
 
 	public void genkra(PW pw) {
-		if(this.superclass==null)
-		{
-			pw.println("class "+this.getName()+" {");
-		}
-		else
-		{
-			pw.println("class "+this.getName()+ " extends "+this.superclass.getName()+ " {");
+		if (this.superclass == null) {
+			pw.println("class " + this.getName() + " {");
+		} else {
+			pw.println("class " + this.getName() + " extends " + this.superclass.getName() + " {");
 		}
 		pw.add();
 		if (this.instanceVariableList != null) {
-			for (InstanceVariable instvar : this.instanceVariableList) 
+			pw.println("");
+			for (InstanceVariable instvar : this.instanceVariableList)
 				instvar.genkra(pw);
 		}
-		if(this.publicMethodList!=null) {
-			for(MethodDec mdec: this.publicMethodList)
-				if(mdec != null)
+		if (this.publicMethodList != null) {
+			for (MethodDec mdec : this.publicMethodList) {
+				if (mdec != null)
 					mdec.genKra(pw);
+				pw.println("");
+			}
 		}
 		pw.sub();
 		pw.println("}");

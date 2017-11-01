@@ -1,7 +1,11 @@
+
 class Program {
+
    public void run() {
-      int a;
-      a = 1;
+      int a ;
+      a = 1 ;
       write( -a );
    }
+
 }
+

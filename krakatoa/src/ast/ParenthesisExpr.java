@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 public class ParenthesisExpr extends Expr {
@@ -20,9 +26,9 @@ public class ParenthesisExpr extends Expr {
 
 	@Override
 	public void genKra(PW pw) {
-		pw.print("(");
+		pw.print("( ");
 		this.expr.genKra(pw);
-		pw.printIdent(")");
+		pw.print(" )");
 		
 	}
 

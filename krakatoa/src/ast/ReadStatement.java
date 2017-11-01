@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 import java.util.ArrayList;
@@ -20,14 +26,14 @@ public class ReadStatement extends Statement{
 	@Override
 	public void genKra(PW pw) {
 		int size = name.size();
-		pw.printIdent("read(");
+		pw.printIdent("read( ");
 		for(String n: name)
 		{
 			pw.print(n);
 			if(--size>0)
 				pw.print(", ");
 		}
-		pw.println(");");
+		pw.println(" );");
 	}
 
 }

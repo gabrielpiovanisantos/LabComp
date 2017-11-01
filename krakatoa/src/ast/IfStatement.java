@@ -1,3 +1,9 @@
+/*
+ * Gabriel Piovani Moreira dos Santos RA : 552216
+ * Vitor Fernando Souza Silva		  RA : 552488
+ * 
+ * */
+
 package ast;
 
 public class IfStatement extends Statement {
@@ -16,7 +22,7 @@ public class IfStatement extends Statement {
 	public void genKra(PW pw) {
 		pw.printIdent("if ( ");
 		this.expr.genKra(pw);
-		pw.printlnIdent(")");
+		pw.println(")");
 		pw.add();
 		this.stmt.genKra(pw);
 		pw.sub();
