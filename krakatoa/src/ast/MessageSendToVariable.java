@@ -17,6 +17,12 @@ public class MessageSendToVariable extends MessageSend {
 		
 	}
 
+	@Override
+	public void genCplusplus(PW pw, boolean putParenthesis) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 
     

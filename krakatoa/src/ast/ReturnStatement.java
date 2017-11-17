@@ -11,7 +11,7 @@ public class ReturnStatement extends Statement{
 	public Expr expr;
 
 	@Override
-	public void genC(PW pw) {
+	public void genCplusplus(PW pw) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -17,6 +17,12 @@ public void genKra(PW pw) {
 	
 }
 
+@Override
+public void genCplusplus(PW pw) {
+	// TODO Auto-generated method stub
+	
+}
+
 }
 
 

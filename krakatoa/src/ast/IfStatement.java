@@ -13,7 +13,7 @@ public class IfStatement extends Statement {
 	public Statement elseStmt;
 
 	@Override
-	public void genC(PW pw) {
+	public void genCplusplus(PW pw) {
 		// TODO Auto-generated method stub
 		
 	}

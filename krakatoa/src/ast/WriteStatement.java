@@ -11,7 +11,7 @@ public class WriteStatement extends Statement{
 	public ExprList exprlist;
 
 	@Override
-	public void genC(PW pw) {
+	public void genCplusplus(PW pw) {
 		// TODO Auto-generated method stub
 		
 	}

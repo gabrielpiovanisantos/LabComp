@@ -9,7 +9,7 @@ public class LiteralInt extends Expr {
     public int getValue() {
         return value;
     }
-    public void genC( PW pw, boolean putParenthesis ) {
+    public void genCplusplus( PW pw, boolean putParenthesis ) {
         pw.printIdent("" + value);
     }
     

@@ -13,7 +13,7 @@ public class AssignExprLocalDec extends Statement {
 	public Expr right;
 
 	@Override
-	public void genC(PW pw) {
+	public void genCplusplus(PW pw) {
 		// TODO Auto-generated method stub
 
 	}

@@ -48,7 +48,7 @@ public class VarMethodExpr extends Expr {
 	}
 
 	@Override
-	public void genC(PW pw, boolean putParenthesis) {
+	public void genCplusplus(PW pw, boolean putParenthesis) {
 		// TODO Auto-generated method stub
 
 	}

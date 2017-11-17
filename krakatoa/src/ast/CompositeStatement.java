@@ -11,7 +11,7 @@ public class CompositeStatement extends Statement {
 	public StatementList stmlist;
 
 	@Override
-	public void genC(PW pw) {
+	public void genCplusplus(PW pw) {
 		// TODO Auto-generated method stub
 		
 	}

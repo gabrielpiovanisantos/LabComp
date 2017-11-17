@@ -17,12 +17,6 @@ public class ConstructExpr extends Expr {
 	}
 
 	@Override
-	public void genC(PW pw, boolean putParenthesis) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public Type getType(){
 		return this.aclass;
 	}
@@ -31,6 +25,12 @@ public class ConstructExpr extends Expr {
 	public void genKra(PW pw) {
 		pw.print("new "+ this.className+ "()");
 
+	}
+
+	@Override
+	public void genCplusplus(PW pw, boolean putParenthesis) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
