@@ -16,4 +16,9 @@ public class InstanceVariable extends Variable {
 		pw.printlnIdent("private"+" "+this.getType().getName()+" "+this.getName()+";");		
 	}
 
+	public void genCplusplus(PW pw) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

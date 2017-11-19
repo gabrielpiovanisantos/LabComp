@@ -54,4 +54,18 @@ public class MethodDec {
 		pw.printlnIdent("}");
 		
 	}
+
+	public void genCplusplus(PW pw) {
+
+		pw.printIdent(this.qualifier.name().toLowerCase() + " " + this.returnType.getName()
+		+ " " + this.getName() + "(");
+		if(this.param != null)
+			this.param.genCplusplus(pw);
+		pw.println(") {");
+		pw.add();
+		if(this.stmtList != null)
+			this.stmtList.genCplusplus(pw);		
+		pw.sub();
+		pw.printlnIdent("}");
+	}
 }

@@ -27,7 +27,13 @@ public class Program {
 		}
 	}
 
-	public void genC(PW pw) {
+	public void genCplusplus(PW pw) {
+		pw.println("");
+		for (KraClass classe : classList) {
+			if (classe != null)
+				classe.genCplusplus(pw);
+			pw.println("");
+		}
 	}
 
 	public ArrayList<KraClass> getClassList() {

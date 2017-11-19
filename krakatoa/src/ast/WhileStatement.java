@@ -32,8 +32,12 @@ public class WhileStatement extends Statement{
 
 	@Override
 	public void genCplusplus(PW pw) {
-		// TODO Auto-generated method stub
-		
+		pw.printIdent("while ( ");
+		this.expr.genCplusplus(pw, false);
+		pw.println(" )");
+		pw.add();
+		this.stmt.genCplusplus(pw);
+		pw.sub();
 	}
 
 	@Override

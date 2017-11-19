@@ -12,8 +12,8 @@ public class WriteLnStatement extends Statement {
 
 	@Override
 	public void genCplusplus(PW pw) {
-		// TODO Auto-generated method stub
-		
+		pw.printIdent("cout << ");
+		this.exprlist.genKra(pw);		
 	}
 
 	@Override

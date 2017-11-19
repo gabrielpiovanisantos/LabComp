@@ -14,7 +14,19 @@ public class IfStatement extends Statement {
 
 	@Override
 	public void genCplusplus(PW pw) {
-		// TODO Auto-generated method stub
+		pw.printIdent("if ( ");
+		this.expr.genCplusplus(pw, false);
+		pw.println(")");
+		pw.add();
+		this.stmt.genCplusplus(pw);
+		pw.sub();
+		if(this.elseStmt!=null)
+		{
+			pw.printlnIdent(" else ");
+			pw.add();
+			this.elseStmt.genCplusplus(pw);
+			pw.sub();
+		}		
 		
 	}
 

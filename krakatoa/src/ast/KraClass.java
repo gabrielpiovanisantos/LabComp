@@ -121,4 +121,28 @@ public class KraClass extends Type {
 		pw.sub();
 		pw.println("}");
 	}
+
+	public void genCplusplus(PW pw) {
+		if (this.superclass == null) {
+			pw.println("class " + this.getName() + " {");
+		} else {
+			pw.println("class " + this.getName() + ": public  " + this.superclass.getName() + " {");
+		}
+		pw.add();
+		if (this.instanceVariableList != null) {
+			pw.println("");
+			for (InstanceVariable instvar : this.instanceVariableList)
+				instvar.genCplusplus(pw);
+		}
+		if (this.publicMethodList != null) {
+			for (MethodDec mdec : this.publicMethodList) {
+				if (mdec != null)
+					mdec.genCplusplus(pw);
+				pw.println("");
+			}
+		}
+		pw.sub();
+		pw.println("}");
+		
+	}
 }

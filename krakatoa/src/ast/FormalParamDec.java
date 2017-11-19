@@ -30,4 +30,9 @@ public class FormalParamDec {
 				pw.print(", ");
 		}
 	}
+
+	public void genCplusplus(PW pw) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -23,6 +23,7 @@ public class StatementList {
 	public StatementList(ArrayList<Statement> stmtList) {
 		this.stmtlist = stmtList;
 	}
+	
 
 	public void genKra(PW pw) {
 		for(Statement s: stmtlist)
@@ -31,6 +32,16 @@ public class StatementList {
 				s.genKra(pw);
 			}
 		}		
+	}
+
+	public void genCplusplus(PW pw) {
+		for(Statement s: stmtlist)
+		{
+			if(s != null) {
+				s.genCplusplus(pw);
+			}
+		}		
+		
 	}
 
 }

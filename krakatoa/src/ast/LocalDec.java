@@ -29,4 +29,16 @@ public class LocalDec {
 		}
 	}
 
+	public void genCplusplus(PW pw) {
+		pw.print(this.type.getCname()+" ");
+		int size = this.arrayVar.size();
+		for(Variable v: arrayVar)
+		{
+			pw.print(v.getName());
+			if(--size>0)
+				pw.print(", ");
+		}
+		
+	}
+
 }

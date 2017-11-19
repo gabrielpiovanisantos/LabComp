@@ -14,7 +14,17 @@ public class AssignExprLocalDec extends Statement {
 
 	@Override
 	public void genCplusplus(PW pw) {
-		// TODO Auto-generated method stub
+		pw.printIdent("");
+		if (this.localDec != null)
+			this.localDec.genCplusplus(pw);
+		else {
+			this.left.genCplusplus(pw, false);
+			if (this.right != null) {
+				pw.print(" = ");
+				if (this.right != null)
+					this.right.genCplusplus(pw, false);
+			}
+		}
 
 	}
 

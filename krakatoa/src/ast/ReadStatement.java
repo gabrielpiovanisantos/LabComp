@@ -20,7 +20,14 @@ public class ReadStatement extends Statement{
 
 	@Override
 	public void genCplusplus(PW pw) {
-		// TODO Auto-generated method stub	
+		int size = name.size();
+		pw.printIdent("cin >> ");
+		for(String n: name)
+		{
+			pw.print(n);
+			if(--size>0)
+				pw.print(" >> ");
+		}
 	}
 
 	@Override
