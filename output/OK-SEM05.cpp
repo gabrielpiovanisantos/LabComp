@@ -6,6 +6,7 @@ class A {
    }
 
    public int get() {
+      return  ;
    }
 
 }
@@ -13,7 +14,8 @@ class A {
 class B: public  A {
 
    public void set() {
-      cout << pn       ;
+      cout << pn;
+       ;
    }
 
 }

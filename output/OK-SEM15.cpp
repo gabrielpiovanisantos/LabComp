@@ -2,7 +2,8 @@
 class A {
 
    public void print() {
-      cout << 0   }
+      cout <<       0;
+   }
 
    public void accept() {
        ;

@@ -9,6 +9,7 @@ class A {
    public int put() {
       int put ;
        = n ;
+      return n ;
    }
 
 }

@@ -7,7 +7,8 @@ class Program {
  ;
  ;
  ;
-      cout << 1 ;
+      cout <<       1;
+ ;
  ;
       if ( )
  ;

@@ -2,6 +2,7 @@
 class A {
 
    public int get() {
+      return  ;
    }
 
    public void set() {
@@ -14,11 +15,15 @@ class B: public  A {
 
    public void m() {
       int i ;
-      cin >> i      cin >> k       ;
-      cout << super.get ( ), this.get(), this.k, i   }
+      cin >> i;
+      cin >> k;
+       ;
+      cout << , , , i;
+   }
 
    public void print() {
-      cout << this.k   }
+      cout << ;
+   }
 
 }
 

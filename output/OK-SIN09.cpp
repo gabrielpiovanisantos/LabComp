@@ -3,6 +3,7 @@ class A {
 
    public int m() {
        ;
+      return  +  ;
    }
 
    public void init() {
@@ -17,7 +18,8 @@ class Program {
    public void run() {
       A a ;
       a =  ;
-      cout << a.m   }
+      cout << ;
+   }
 
 }
 

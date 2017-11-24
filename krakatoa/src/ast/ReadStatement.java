@@ -28,6 +28,7 @@ public class ReadStatement extends Statement{
 			if(--size>0)
 				pw.print(" >> ");
 		}
+		pw.println(";");
 	}
 
 	@Override

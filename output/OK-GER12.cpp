@@ -2,17 +2,20 @@
 class A {
 
    public void m1() {
-      cout << 1   }
+      cout <<       1;
+   }
 
    public void m2() {
-      cout << n   }
+      cout << n;
+   }
 
 }
 
 class B: public  A {
 
    public void m2() {
-      cout << n       ;
+      cout << n;
+       ;
    }
 
 }
@@ -21,11 +24,14 @@ class C: public  B {
 
    public void m1() {
        ;
-      cout << 2   }
+      cout <<       2;
+   }
 
    public void m3() {
        ;
-      cout << 1      cout << 2   }
+      cout <<       1;
+      cout <<       2;
+   }
 
 }
 

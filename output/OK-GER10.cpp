@@ -3,9 +3,11 @@ class A {
 
    public void m1() {
        =       1 ;
-      cout << this.k, n   }
+      cout << , n;
+   }
 
    public int getK() {
+      return  ;
    }
 
 }
@@ -15,9 +17,11 @@ class B: public  A {
    public void m2() {
        =       2 ;
        ;
-      cout << this.k, n   }
+      cout << , n;
+   }
 
    public int getK() {
+      return  ;
    }
 
 }
@@ -26,11 +30,13 @@ class C: public  B {
 
    public void m3() {
        ;
-      cout << 3, n   }
+      cout <<       3, n;
+   }
 
    public void m4() {
        ;
-      cout << 4, n   }
+      cout <<       4, n;
+   }
 
 }
 

@@ -9,7 +9,8 @@ class Program {
       e =  ;
       f =  ;
       if ( (((((((a == b      ) && (a ==       1      )) && (      1 == b      )) && (a != b      )) && (e == f      )) && ( == f      )) && (e != f      )) && ( != f      ))
-         cout << impossivel   }
+         cout << impossivel;
+   }
 
 }
 

@@ -15,10 +15,12 @@ class A {
    }
 
    public void r() {
-      cout << this.i   }
+      cout << ;
+   }
 
    public void s() {
-      cout << this.j   }
+      cout << ;
+   }
 
 }
 
@@ -38,10 +40,12 @@ class B: public  A {
    }
 
    public void r() {
-      cout << this.i   }
+      cout << ;
+   }
 
    public void s() {
-      cout << this.j   }
+      cout << ;
+   }
 
 }
 
@@ -61,10 +65,12 @@ class C: public  A {
    }
 
    public void r() {
-      cout << this.i   }
+      cout << ;
+   }
 
    public void s() {
-      cout << this.j   }
+      cout << ;
+   }
 
 }
 

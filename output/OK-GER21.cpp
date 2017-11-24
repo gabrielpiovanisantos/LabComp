@@ -6,6 +6,7 @@ class A {
    }
 
    public int get() {
+      return  ;
    }
 
 }
@@ -13,13 +14,16 @@ class A {
 class Program {
 
    public void print() {
-      cout << this.a.get   }
+      cout << ;
+   }
 
    public A get() {
+      return  ;
    }
 
    public void run() {
-      cout <<       cout << Ok-ger21      cout << The output should be :      cout << 0      cout << 0   }
+      cout <<       cout << Ok-ger21      cout << The output should be :      cout << 0      cout << 0;
+   }
 
 }
 

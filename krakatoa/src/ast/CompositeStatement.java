@@ -12,7 +12,11 @@ public class CompositeStatement extends Statement {
 
 	@Override
 	public void genCplusplus(PW pw) {
-		// TODO Auto-generated method stub
+		pw.printIdent("{ ");
+		pw.add();
+		this.stmlist.genCplusplus(pw);
+		pw.sub();
+		pw.println("}");
 		
 	}
 

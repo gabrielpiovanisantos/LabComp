@@ -10,15 +10,20 @@ public class SuperMethodExpr extends Expr {
 
 	private String messageName;
 	private ExprList exprList;
+	private String superClassName;
 
-	public SuperMethodExpr(String messageName, ExprList exprList) {
+	public SuperMethodExpr(String messageName, ExprList exprList, String superClassName) {
 		this.messageName = messageName;
 		this.exprList = exprList;
+		this.superClassName = superClassName;
 	}
 
 	@Override
 	public void genCplusplus(PW pw, boolean putParenthesis) {
-		// TODO Auto-generated method stub
+		pw.print(superClassName + "::" + this.messageName + "( ");
+		if(this.exprList != null)
+			this.exprList.genCplusplus(pw);
+		pw.println(")");
 
 	}
 

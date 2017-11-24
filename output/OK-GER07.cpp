@@ -2,7 +2,8 @@
 class A {
 
    public void m() {
-      cout << 0   }
+      cout <<       0;
+   }
 
 }
 

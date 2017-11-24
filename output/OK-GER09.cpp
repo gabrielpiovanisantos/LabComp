@@ -2,7 +2,8 @@
 class A {
 
    public void m1() {
-      cout << 1, n   }
+      cout <<       1, n;
+   }
 
 }
 
@@ -10,7 +11,8 @@ class B: public  A {
 
    public void m2() {
        ;
-      cout << 2, n   }
+      cout <<       2, n;
+   }
 
 }
 
@@ -18,11 +20,13 @@ class C: public  B {
 
    public void m3() {
        ;
-      cout << 3, n   }
+      cout <<       3, n;
+   }
 
    public void m4() {
        ;
-      cout << 4, n   }
+      cout <<       4, n;
+   }
 
 }
 

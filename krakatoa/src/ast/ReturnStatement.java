@@ -12,7 +12,9 @@ public class ReturnStatement extends Statement{
 
 	@Override
 	public void genCplusplus(PW pw) {
-		// TODO Auto-generated method stub
+		pw.printIdent("return ");
+		this.expr.genCplusplus(pw, false);
+		pw.println(" ;");
 		
 	}
 

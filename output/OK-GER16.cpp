@@ -2,6 +2,7 @@
 class A {
 
    public int get_A() {
+      return  ;
    }
 
    public void set() {
@@ -9,7 +10,8 @@ class A {
    }
 
    public void print() {
-      cout << this.get_A()   }
+      cout << ;
+   }
 
    public void init() {
        ;
@@ -20,6 +22,7 @@ class A {
 class B: public  A {
 
    public int get_B() {
+      return  ;
    }
 
    public void init() {
@@ -28,7 +31,9 @@ class B: public  A {
    }
 
    public void print() {
-      cout << this.get_B()      cout << this.get_A()       ;
+      cout << ;
+      cout << ;
+       ;
    }
 
 }
@@ -36,6 +41,7 @@ class B: public  A {
 class C: public  A {
 
    public int get_A() {
+      return       0 ;
    }
 
 }
@@ -50,14 +56,19 @@ class Program {
        ;
       c =  ;
        ;
-      cout << b.get_B      a = b ;
+      cout << ;
+      a = b ;
        ;
        ;
        ;
        ;
-      cout << a.get_A      cout << b.get_A      a = c ;
-      cout << a.get_A      c =  ;
-      cout << c.get_A   }
+      cout << ;
+      cout << ;
+      a = c ;
+      cout << ;
+      c =  ;
+      cout << ;
+   }
 
 }
 

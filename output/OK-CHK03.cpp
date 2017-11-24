@@ -4,10 +4,12 @@ class A {
    public void m() {
       int k ;
       k =  ;
-      cout << k   }
+      cout << k;
+   }
 
    public void p() {
-      cout << this.n   }
+      cout << ;
+   }
 
    public void s() {
        =       0 ;

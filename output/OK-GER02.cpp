@@ -2,7 +2,14 @@
 class A {
 
    public void m() {
-      cout << 6      cout << 1      cout << 1 + 1      cout << 4 - 1      cout << ( 6 - 3 ) + 1      cout << 10 / 2      cout << 2 * 3   }
+      cout <<       6;
+      cout <<       1;
+      cout <<       1 +       1;
+      cout <<       4 -       1;
+      cout << (      6 -       3      ) +       1;
+      cout <<       10 /       2;
+      cout <<       2 *       3;
+   }
 
 }
 

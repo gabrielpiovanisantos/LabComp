@@ -24,7 +24,7 @@ public class LiteralBoolean extends Expr {
 
 	@Override
 	public void genCplusplus(PW pw, boolean putParenthesis) {
-		// TODO Auto-generated method stub
+		pw.print(""+this.value);
 		
 	}
 

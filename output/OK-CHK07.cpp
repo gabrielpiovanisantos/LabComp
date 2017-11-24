@@ -2,6 +2,7 @@
 class Person {
 
    public String getCourse() {
+      return  ;
    }
 
    public void setCourse() {
@@ -9,6 +10,7 @@ class Person {
    }
 
    public int getNumber() {
+      return  ;
    }
 
    public void setNumber() {
@@ -21,13 +23,17 @@ class Person {
    }
 
    public String getName() {
+      return  ;
    }
 
    public int getAge() {
+      return  ;
    }
 
    public void print() {
-      cout << Name = , this.name      cout << Age = , this.age   }
+      cout << Name = , ;
+      cout << Age = , ;
+   }
 
 }
 
@@ -39,13 +45,17 @@ class Group {
    }
 
    public Person getFirst() {
+      return  ;
    }
 
    public Person getSecond() {
+      return  ;
    }
 
    public void print() {
-      cout << First: , this.first.getName      cout << Second: , this.second.getName   }
+      cout << First: , ;
+      cout << Second: , ;
+   }
 
 }
 
@@ -58,7 +68,10 @@ class University {
    }
 
    public void print() {
-      cout << this.name      cout << this.city      cout << this.numberOfStudents   }
+      cout << ;
+      cout << ;
+      cout << ;
+   }
 
 }
 

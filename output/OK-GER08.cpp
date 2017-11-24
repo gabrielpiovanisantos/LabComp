@@ -2,13 +2,16 @@
 class A {
 
    public void m1() {
-      cout << 1, n   }
+      cout <<       1, n;
+   }
 
    public void m2() {
-      cout << 2, n   }
+      cout <<       2, n;
+   }
 
    public void m3() {
-      cout << 3, n   }
+      cout <<       3, n;
+   }
 
 }
 

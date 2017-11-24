@@ -29,7 +29,7 @@ public class ConstructExpr extends Expr {
 
 	@Override
 	public void genCplusplus(PW pw, boolean putParenthesis) {
-		// TODO Auto-generated method stub
+		pw.printIdent("new "+ this.className + "()");
 		
 	}
 

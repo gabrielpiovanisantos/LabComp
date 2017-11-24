@@ -56,7 +56,7 @@ public class Compiler {
 		} catch (CompilerError e) {
 			// if there was an exception, there is a compilation signalError
 		} catch (RuntimeException e) {
-			// e.printStackTrace();
+			 e.printStackTrace();
 		}
 		return program;
 	}
@@ -1023,6 +1023,7 @@ public class Compiler {
 				}
 				superclass = superclass.getSuperclass();
 			}
+			String superClassName = superclass.getName();
 			if (!flag2)
 				signalError.showError("Method '" + messageName + "' was not found in superclass '"
 						+ this.currentClass.getName() + "' or its superclasses");
@@ -1032,7 +1033,7 @@ public class Compiler {
 			 */
 			lexer.nextToken();
 			exprList = realParameters();
-			return new SuperMethodExpr(messageName, exprList);
+			return new SuperMethodExpr(messageName, exprList, superClassName);
 		case IDENT:
 			/*
 			 * PrimaryExpr ::= Id | Id "." Id | Id "." Id "(" [ ExpressionList ] ")" | Id
