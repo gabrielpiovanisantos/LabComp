@@ -1,0 +1,22 @@
+
+class A {
+
+   public void m() {
+   }
+
+   public void p() {
+      int m ;
+   }
+
+}
+
+class Program {
+
+   public void run() {
+      A a ;
+      a =  ;
+       ;
+   }
+
+}
+

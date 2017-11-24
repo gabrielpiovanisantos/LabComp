@@ -13,7 +13,8 @@ public class WriteStatement extends Statement{
 	@Override
 	public void genCplusplus(PW pw) {
 		pw.printIdent("cout << ");
-		this.exprlist.genKra(pw);
+		this.exprlist.genCplusplus(pw);
+		pw.println(";");
 		
 	}
 
