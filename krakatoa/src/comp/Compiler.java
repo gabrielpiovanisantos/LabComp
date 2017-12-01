@@ -317,13 +317,15 @@ public class Compiler {
 					retflag = true;
 					break;
 				} else if (m.getClass() == IfStatement.class) {
-					ifstmt = (IfStatement) m;
-					if (ifstmt.stmt.getClass() == ReturnStatement.class) {
-						retflag = true;
-						break;
-					} else if (ifstmt.elseStmt.getClass() == ReturnStatement.class) {
-						retflag = true;
-						break;
+					ifstmt = (IfStatement) m;	
+					if(ifstmt.stmt != null){
+						if (ifstmt.stmt.getClass() == ReturnStatement.class) {
+							retflag = true;
+							break;
+						} else if (ifstmt.elseStmt.getClass() == ReturnStatement.class) {
+							retflag = true;
+							break;
+						}
 					}
 				}
 			}
@@ -603,9 +605,11 @@ public class Compiler {
 				if (r == Type.undefinedType) {
 					if (l.isDefaultType())
 						signalError.showError("Expressions of diferents types");
-				} else if (!r.isCompatible(l))
-					signalError.showError("Expressions of diferents types");
-
+				} else if (r != null){
+					if(!r.isCompatible(l))
+						signalError.showError("Expressions of diferents types");
+				}
+					
 				if (lexer.token != Symbol.SEMICOLON)
 					signalError.showError("';' expected", true);
 
@@ -1012,7 +1016,8 @@ public class Compiler {
 			boolean flag2 = false;
 
 			KraClass superclass = this.currentClass.getSuperclass();
-
+			String superClassName = null;
+			
 			while (superclass != null) {
 				ArrayList<MethodDec> list = superclass.getPublicMethodList();
 				for (int i = 0; i < list.size(); i++) {
@@ -1021,9 +1026,11 @@ public class Compiler {
 						break;
 					}
 				}
+				superClassName = superclass.getName();
 				superclass = superclass.getSuperclass();
+				
 			}
-			String superClassName = superclass.getName();
+			
 			if (!flag2)
 				signalError.showError("Method '" + messageName + "' was not found in superclass '"
 						+ this.currentClass.getName() + "' or its superclasses");

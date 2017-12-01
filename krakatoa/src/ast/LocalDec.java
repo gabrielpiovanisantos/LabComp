@@ -23,7 +23,7 @@ public class LocalDec {
 		int size = this.arrayVar.size();
 		for(Variable v: arrayVar)
 		{
-			pw.print(v.getName());
+			pw.print("*"+v.getName());
 			if(--size>0)
 				pw.print(", ");
 		}

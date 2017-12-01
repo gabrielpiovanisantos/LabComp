@@ -7,15 +7,38 @@ class Program {
  ;
  ;
  ;
-      cout <<       1;
+      write( 1 );
  ;
  ;
-      if ( )
+      if ( true)
  ;
-      while (  )
+      while ( false )
  ;
  ;
    }
+
+}
+
+#include <iostream>
+using namespace std;
+class Program {
+
+public: 
+      void run() {
+ ;
+ ;
+ ;
+ ;
+ ;
+         cout <<          1;
+ ;
+ ;
+         if ( true)
+ ;
+         while ( false )
+ ;
+ ;
+      }
 
 }
 

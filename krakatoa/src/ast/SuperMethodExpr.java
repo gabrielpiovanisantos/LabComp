@@ -24,7 +24,6 @@ public class SuperMethodExpr extends Expr {
 		if(this.exprList != null)
 			this.exprList.genCplusplus(pw);
 		pw.println(")");
-
 	}
 
 	@Override

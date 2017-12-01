@@ -56,9 +56,7 @@ public class MethodDec {
 	}
 
 	public void genCplusplus(PW pw) {
-
-		pw.printIdent(this.qualifier.name().toLowerCase() + " " + this.returnType.getName()
-		+ " " + this.getName() + "(");
+		pw.printIdent("virtual "+ this.returnType.getName()	+ " " + this.getName() + "(");
 		if(this.param != null)
 			this.param.genCplusplus(pw);
 		pw.println(") {");

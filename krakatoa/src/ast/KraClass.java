@@ -8,6 +8,8 @@ package ast;
 
 import java.util.ArrayList;
 
+import lexer.Symbol;
+
 /*
  * Krakatoa Class
  */
@@ -134,15 +136,53 @@ public class KraClass extends Type {
 			for (InstanceVariable instvar : this.instanceVariableList)
 				instvar.genCplusplus(pw);
 		}
+		boolean publicflag = false;
+		boolean privateflag = false;
+		
 		if (this.publicMethodList != null) {
-			for (MethodDec mdec : this.publicMethodList) {
-				if (mdec != null)
-					mdec.genCplusplus(pw);
-				pw.println("");
-			}
+			 for (MethodDec mdec : this.publicMethodList) {
+				if (mdec != null){
+					if(mdec.getQualifier() == Symbol.PUBLIC){
+						publicflag = true;
+						break;
+					}
+				}
+			 }
+			 if(publicflag){
+				 pw.println("public: ");
+				 pw.add();
+				 for (MethodDec mdec : this.publicMethodList) {
+						if (mdec != null){
+							if(mdec.getQualifier() == Symbol.PUBLIC)
+								mdec.genCplusplus(pw);
+						}
+						pw.println("");
+				 }
+				 pw.sub();
+			 }
+			 for (MethodDec mdec : this.publicMethodList) {
+				 	if (mdec != null){
+						if(mdec.getQualifier() == Symbol.PRIVATE){
+							privateflag = true;
+							break;
+						}
+					}
+			 }
+			 
+			 if(privateflag){
+				 pw.println("private: ");
+				 pw.add();
+				 for (MethodDec mdec : this.publicMethodList) {
+						if (mdec != null){
+							if(mdec.getQualifier() == Symbol.PRIVATE)
+								mdec.genCplusplus(pw);
+						}
+						pw.println("");
+				 }
+				 pw.sub();
+			}	 
 		}
 		pw.sub();
 		pw.println("}");
-		
 	}
 }

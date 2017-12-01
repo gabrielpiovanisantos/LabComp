@@ -1,0 +1,13 @@
+class A {
+   PUBLIC void m() {
+}
+}
+class Program {
+   PUBLIC void run() {
+      Aa;
+;
+      a=      new A ( )
+      a.m
+=;
+}
+}

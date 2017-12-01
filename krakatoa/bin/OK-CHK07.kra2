@@ -1,0 +1,97 @@
+class Person {
+   private String course;
+   private int number;
+   private int age;
+   private String name;
+   public String getCourse() {
+      return this.course;
+   }
+   public void setCourse(String course) {
+      this.course = course;
+   }
+   public int getNumber() {
+      return this.number;
+   }
+   public void setNumber(int number) {
+      this.number = number;
+   }
+   public void init(String name, int age) {
+      this.name = name;
+      this.age = age;
+   }
+   public String getName() {
+      return this.name;
+   }
+   public int getAge() {
+      return this.age;
+   }
+   public void print() {
+      write( Name = , this.name );
+      write( Age = , this.age );
+   }
+}
+class Group {
+   private Person first;
+   private Person second;
+   public void set(Person first, Person second) {
+      this.first = first;
+      this.second = second;
+   }
+   public Person getFirst() {
+      return this.first;
+   }
+   public Person getSecond() {
+      return this.second;
+   }
+   public void print() {
+      write( First: , this.first.getName );
+      write( Second: , this.second.getName );
+   }
+}
+class University {
+   private String name;
+   private int numberOfStudents;
+   private String city;
+   public void init(String name, String city, int numberOfStudents) {
+      this.name = name;
+      this.city = city;
+      this.numberOfStudents = numberOfStudents;
+   }
+   public void print() {
+      write( this.name );
+      write( this.city );
+      write( this.numberOfStudents );
+   }
+}
+class Program {
+   public void run() {
+      University s;
+      Person joao;
+      Person maria;
+      Group g;
+      s = new University ( )
+;
+      s.init( ast.ExprList@7d4991ad );
+      s.print;
+      write(  );
+      joao = new Person ( )
+;
+      joao.init( ast.ExprList@28d93b30 );
+      joao.setCourse( ast.ExprList@1b6d3586 );
+      joao.setNumber( ast.ExprList@4554617c );
+      maria = new Person ( )
+;
+      maria.init( ast.ExprList@74a14482 );
+      maria.setCourse( ast.ExprList@1540e19d );
+      maria.setNumber( ast.ExprList@677327b6 );
+      joao.print;
+      write(  );
+      maria.print;
+      write(  );
+      g = new Group ( )
+;
+      g.set( ast.ExprList@14ae5a5 );
+      g.print;
+      write(  );
+   }
+}

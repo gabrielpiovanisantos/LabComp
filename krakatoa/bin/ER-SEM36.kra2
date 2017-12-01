@@ -1,0 +1,4 @@
+class A {
+   PUBLIC void m() {
+}
+}
