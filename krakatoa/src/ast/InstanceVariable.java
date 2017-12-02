@@ -17,7 +17,10 @@ public class InstanceVariable extends Variable {
 	}
 
 	public void genCplusplus(PW pw) {
-		// TODO Auto-generated method stub
+		if(!this.getType().isDefaultType())
+			pw.println(this.getType().getName()+" "+this.getName()+";");
+		else
+			pw.println(this.getType().getName()+" *"+this.getName()+";");
 		
 	}
 

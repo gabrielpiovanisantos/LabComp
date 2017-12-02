@@ -133,8 +133,11 @@ public class KraClass extends Type {
 		pw.add();
 		if (this.instanceVariableList != null) {
 			pw.println("");
+			pw.println("private: ");
+			pw.add();
 			for (InstanceVariable instvar : this.instanceVariableList)
 				instvar.genCplusplus(pw);
+			pw.sub();
 		}
 		boolean publicflag = false;
 		boolean privateflag = false;
