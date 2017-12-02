@@ -15,7 +15,6 @@ import lexer.Symbol;
  */
 public class KraClass extends Type {
 
-	private String name;
 	private KraClass superclass;
 	private ArrayList<InstanceVariable> instanceVariableList;
 	private ArrayList<MethodDec> publicMethodList, privateMethodList;

@@ -1,30 +1,10 @@
-
-class Program {
-
-   public void run() {
- ;
- ;
- ;
- ;
- ;
-      write( 1 );
- ;
- ;
-      if ( true)
- ;
-      while ( false )
- ;
- ;
-   }
-
-}
-
 #include <iostream>
 using namespace std;
 class Program {
 
+private: 
 public: 
-      void run() {
+      virtual void run() {
  ;
  ;
  ;

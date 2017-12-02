@@ -1,30 +1,10 @@
-
-class A {
-
-   public void m() {
-      int i ;
-      i = 1 ;
-      write( i );
-   }
-
-}
-
-class Program {
-
-   public void run() {
-      A a ;
-      a = new A() ;
-      a.m ;
-   }
-
-}
-
 #include <iostream>
 using namespace std;
 class A {
 
+private: 
 public: 
-      void m() {
+      virtual void m() {
          int i ;
          i =          1 ;
          cout << i;
@@ -34,8 +14,9 @@ public:
 
 class Program {
 
+private: 
 public: 
-      void run() {
+      virtual void run() {
          A a ;
          a =          new A() ;
          a.m; ;

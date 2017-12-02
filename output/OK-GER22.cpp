@@ -1,45 +1,10 @@
-
-class Program {
-
-   public void run() {
-      write(  );
-      write( Ok-ger22 );
-      write( The output should be 100 );
-      int i, j, n ;
-      i = 0 ;
-      j = 0 ;
-      n = 10 ;
-      boolean b ;
-      b = false ;
-      do {
-         n = n + 1 ;
-      } while (false)
- ;
-      assert n == 11, 'do-while' statement with 'false' as expression'
-      n = 10 ;
-      int sum ;
-      sum = 0 ;
-      do {
-         i = 0 ;
-         do {
-            i = i + 1 ;
-            sum = sum + 1 ;
-         } while (i < n)
- ;
-         j = j + 1 ;
-      } while (j < n)
- ;
-      write( sum );
-   }
-
-}
-
 #include <iostream>
 using namespace std;
 class Program {
 
+private: 
 public: 
-      void run() {
+      virtual void run() {
          cout << ;
          cout << Ok-ger22;
          cout << The output should be 100;

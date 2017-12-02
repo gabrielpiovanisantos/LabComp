@@ -1,35 +1,19 @@
-
-class A {
-
-   public void A() {
-   }
-
-}
-
-class Program {
-
-   public void run() {
-      A a ;
-      a = new A() ;
-      a.A ;
-   }
-
-}
-
 #include <iostream>
 using namespace std;
 class A {
 
+private: 
 public: 
-      void A() {
+      virtual void A() {
       }
 
 }
 
 class Program {
 
+private: 
 public: 
-      void run() {
+      virtual void run() {
          A a ;
          a =          new A() ;
          a.A; ;

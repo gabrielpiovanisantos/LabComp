@@ -1,65 +1,37 @@
-
-class A {
-
-   public void m() {
-   }
-
-}
-
-class B extends A {
-
-   public void m() {
-   }
-
-}
-
-class C extends B {
-
-   public void p() {
-   }
-
-}
-
-class Program {
-
-   public void run() {
-      C c ;
-      c = new C() ;
-      c.m ;
-   }
-
-}
-
 #include <iostream>
 using namespace std;
 class A {
 
+private: 
 public: 
-      void m() {
+      virtual void m() {
       }
 
 }
 
 class B: public  A {
 
+private: 
 public: 
-      void m() {
+      virtual void m() {
       }
 
 }
 
 class C: public  B {
 
+private: 
 public: 
-      void p() {
+      virtual void p() {
       }
 
 }
 
 class Program {
 
+private: 
 public: 
-      void run() {
+      virtual void run() {
          C c ;
          c =          new C() ;
          c.m; ;
