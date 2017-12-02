@@ -11,8 +11,6 @@ public:
 }
 
 class B: public  A {
-
-private: 
 public: 
       virtual void put() {
       }
@@ -20,13 +18,11 @@ public:
 }
 
 class Program {
-
-private: 
 public: 
       virtual void run() {
          A a ;
          a =          new A() ;
-         a.put(          0,          1, true ); ;
+         a.put(          0,          1, true ) ;
       }
 
 }

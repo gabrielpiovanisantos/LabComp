@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 class A {
-
-private: 
 public: 
       virtual void m() {
          int a0 ;
@@ -162,13 +160,11 @@ public:
 }
 
 class Program {
-
-private: 
 public: 
       virtual void run() {
          A a ;
          a =          new A() ;
-         a.m; ;
+         a.m ;
       }
 
 }

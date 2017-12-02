@@ -130,7 +130,7 @@ public class KraClass extends Type {
 			pw.println("class " + this.getName() + ": public  " + this.superclass.getName() + " {");
 		}
 		pw.add();
-		if (this.instanceVariableList != null) {
+		if (this.instanceVariableList.size() > 0 ) {
 			pw.println("");
 			pw.println("private: ");
 			pw.add();

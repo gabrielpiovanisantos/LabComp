@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 class A {
-
-private: 
 public: 
       virtual void first() {
       }
@@ -10,8 +8,6 @@ public:
 }
 
 class B: public  A {
-
-private: 
 public: 
       virtual void second() {
       }
@@ -19,8 +15,6 @@ public:
 }
 
 class C: public  B {
-
-private: 
 public: 
       virtual void third() {
       }
@@ -28,8 +22,6 @@ public:
 }
 
 class Program {
-
-private: 
 public: 
       virtual void run() {
          A a ;
@@ -38,12 +30,12 @@ public:
          a =          new A() ;
          b =          new B() ;
          c =          new C() ;
-         a.first(          0 ); ;
-         b.first(          0 ); ;
-         c.first(          0 ); ;
-         b.second; ;
-         c.second; ;
-         c.third; ;
+         a.first(          0 ) ;
+         b.first(          0 ) ;
+         c.first(          0 ) ;
+         b.second ;
+         c.second ;
+         c.third ;
          a = b ;
          a = c ;
          b = c ;

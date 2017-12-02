@@ -6,11 +6,11 @@ private:
 int *n;
 public: 
       virtual int get() {
-         return this.n; ;
+         return this.n ;
       }
 
       virtual void set() {
-         this.n; = pn ;
+         this.n = pn ;
       }
 
 }
@@ -27,24 +27,22 @@ public:
          A::set(          0)
  ;
          cout << A::get( )
-, this.get();, this.k;, i;
+, this.get(), this.k, i;
       }
 
       virtual void print() {
-         cout << this.k;;
+         cout << this.k;
       }
 
 }
 
 class Program {
-
-private: 
 public: 
       virtual void run() {
          B b ;
          b =          new B() ;
-         b.set(          1 ); ;
-         b.m; ;
+         b.set(          1 ) ;
+         b.m ;
       }
 
 }

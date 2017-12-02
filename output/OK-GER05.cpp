@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 class A {
-
-private: 
 public: 
       virtual void m() {
          int a ;
@@ -18,8 +16,6 @@ public:
 }
 
 class Program {
-
-private: 
 public: 
       virtual void run() {
          A a ;
@@ -28,7 +24,7 @@ public:
          cout << The output should be what you give as input.;
          cout << Type in six numbers;
          a =          new A() ;
-         a.m; ;
+         a.m ;
       }
 
 }

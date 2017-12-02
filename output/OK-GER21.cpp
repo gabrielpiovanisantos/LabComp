@@ -6,11 +6,11 @@ private:
 int *n;
 public: 
       virtual void set() {
-         this.n; = n ;
+         this.n = n ;
       }
 
       virtual int get() {
-         return this.n; ;
+         return this.n ;
       }
 
 }
@@ -21,11 +21,11 @@ private:
 A a;
 public: 
       virtual void print() {
-         cout << this.a.get;;
+         cout << this.a.get;
       }
 
       virtual A get() {
-         return this.a; ;
+         return this.a ;
       }
 
       virtual void run() {

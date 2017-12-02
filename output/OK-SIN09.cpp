@@ -7,25 +7,23 @@ int *n;
 int *k;
 public: 
       virtual int m() {
-         this.m2(          0 ); ;
-         return this.m1(); + this.k; ;
+         this.m2(          0 ) ;
+         return this.m1() + this.k ;
       }
 
       virtual void init() {
-         this.k; =          1 ;
-         this.n; =          0 ;
+         this.k =          1 ;
+         this.n =          0 ;
       }
 
 }
 
 class Program {
-
-private: 
 public: 
       virtual void run() {
          A a ;
          a =          new A() ;
-         cout << a.m;;
+         cout << a.m;
       }
 
 }

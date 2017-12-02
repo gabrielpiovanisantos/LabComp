@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 class A {
-
-private: 
 public: 
       virtual void m1() {
       }
@@ -13,8 +11,6 @@ public:
 }
 
 class B: public  A {
-
-private: 
 public: 
       virtual void m3() {
       }
@@ -25,8 +21,6 @@ public:
 }
 
 class C {
-
-private: 
 public: 
       virtual void m5() {
       }
@@ -40,8 +34,6 @@ public:
 }
 
 class Program {
-
-private: 
 public: 
       virtual void run() {
          A a1 ;
@@ -56,34 +48,34 @@ public:
          b2 =          new B() ;
          c1 =          new C() ;
          c2 =          new C() ;
-         a1.m1; ;
-         a1.m2; ;
-         a2.m2; ;
-         b1.m3; ;
-         b1.m3; ;
-         b2.m3; ;
-         b1.m4; ;
-         b2.m4; ;
-         b1.m4; ;
-         b2.m4; ;
-         c1.m5; ;
-         c2.m5; ;
-         c1.m5; ;
-         c2.m5; ;
-         c1.m5; ;
-         c1.m6; ;
-         c1.m6; ;
-         c1.m6; ;
-         c2.m6; ;
-         c2.m6; ;
-         c2.m6; ;
-         c1.m7; ;
-         c1.m7; ;
-         c1.m7; ;
-         c2.m7; ;
-         c2.m7; ;
-         c2.m7; ;
-         c2.m7; ;
+         a1.m1 ;
+         a1.m2 ;
+         a2.m2 ;
+         b1.m3 ;
+         b1.m3 ;
+         b2.m3 ;
+         b1.m4 ;
+         b2.m4 ;
+         b1.m4 ;
+         b2.m4 ;
+         c1.m5 ;
+         c2.m5 ;
+         c1.m5 ;
+         c2.m5 ;
+         c1.m5 ;
+         c1.m6 ;
+         c1.m6 ;
+         c1.m6 ;
+         c2.m6 ;
+         c2.m6 ;
+         c2.m6 ;
+         c1.m7 ;
+         c1.m7 ;
+         c1.m7 ;
+         c2.m7 ;
+         c2.m7 ;
+         c2.m7 ;
+         c2.m7 ;
       }
 
 }

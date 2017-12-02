@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 class A {
-
-private: 
 public: 
       virtual void m() {
          cout <<          0;
@@ -11,8 +9,6 @@ public:
 }
 
 class Program {
-
-private: 
 public: 
       virtual void run() {
          A a ;
@@ -21,7 +17,7 @@ public:
          cout << The output should be :;
          cout << 0;
          a =          new A() ;
-         a.m; ;
+         a.m ;
       }
 
 }

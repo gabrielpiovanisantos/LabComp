@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 class A {
-
-private: 
 public: 
       virtual void m1() {
          cout <<          2;
@@ -10,14 +8,12 @@ public:
 
       virtual void m2() {
          cout << n;
-         this.m1(); ;
+         this.m1() ;
       }
 
 }
 
 class B: public  A {
-
-private: 
 public: 
       virtual void m1() {
          cout <<          4;
@@ -26,8 +22,6 @@ public:
 }
 
 class Program {
-
-private: 
 public: 
       virtual void run() {
          A a ;
@@ -38,9 +32,9 @@ public:
          cout << 4 1 2 3 4;
          cout <<          4;
          a =          new A() ;
-         a.m2(          1 ); ;
+         a.m2(          1 ) ;
          a =          new B() ;
-         a.m2(          3 ); ;
+         a.m2(          3 ) ;
       }
 
 }

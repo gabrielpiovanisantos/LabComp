@@ -6,12 +6,12 @@ private:
 int *k;
 public: 
       virtual void m1() {
-         this.k; =          1 ;
-         cout << this.k;, n;
+         this.k =          1 ;
+         cout << this.k, n;
       }
 
       virtual int getK() {
-         return this.k; ;
+         return this.k ;
       }
 
 }
@@ -22,21 +22,19 @@ private:
 int *k;
 public: 
       virtual void m2() {
-         this.k; =          2 ;
+         this.k =          2 ;
          A::m1(          1)
  ;
-         cout << this.k;, n;
+         cout << this.k, n;
       }
 
       virtual int getK() {
-         return this.k; ;
+         return this.k ;
       }
 
 }
 
 class C: public  B {
-
-private: 
 public: 
       virtual void m3() {
          A::m2(          2)
@@ -45,15 +43,13 @@ public:
       }
 
       virtual void m4() {
-         this.m3(          3 ); ;
+         this.m3(          3 ) ;
          cout <<          4, n;
       }
 
 }
 
 class Program {
-
-private: 
 public: 
       virtual void run() {
          C c ;
@@ -62,7 +58,7 @@ public:
          cout << The output should be :;
          cout << 1 1 2 2 3 3 4 4;
          c =          new C() ;
-         c.m4(          4 ); ;
+         c.m4(          4 ) ;
       }
 
 }
