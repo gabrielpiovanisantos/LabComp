@@ -21,25 +21,22 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         B b ;
-         C c ;
-         a =          new A() ;
-         b =          new B() ;
-         c =          new C() ;
-         a.first(          0 ) ;
-         b.first(          0 ) ;
-         c.first(          0 ) ;
-         b.second ;
-         c.second ;
-         c.third ;
-         a = b ;
-         a = c ;
-         b = c ;
-      }
-
+virtual void main() {
+   A a ;
+   B b ;
+   C c ;
+   a =    new A() ;
+   b =    new B() ;
+   c =    new C() ;
+   a.first(    0 ) ;
+   b.first(    0 ) ;
+   c.first(    0 ) ;
+   b.second ;
+   c.second ;
+   c.third ;
+   a = b ;
+   a = c ;
+   b = c ;
 }
+
 

@@ -16,19 +16,16 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         cout << ;
-         cout << Ok-ger08;
-         cout << The output should be :;
-         cout << 1 1 2 2 3 3;
-         a =          new A() ;
-         a.m1(          1 ) ;
-         a.m2(          2 ) ;
-         a.m3(          3 ) ;
-      }
-
+virtual void main() {
+   A a ;
+   cout << ;
+   cout << Ok-ger08;
+   cout << The output should be :;
+   cout << 1 1 2 2 3 3;
+   a =    new A() ;
+   a.m1(    1 ) ;
+   a.m2(    2 ) ;
+   a.m3(    3 ) ;
 }
+
 

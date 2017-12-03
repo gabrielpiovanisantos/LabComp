@@ -10,13 +10,10 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         a =          new A() ;
-         a.m ;
-      }
-
+virtual void main() {
+   A a ;
+   a =    new A() ;
+   a.m ;
 }
+
 

@@ -21,15 +21,12 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         a =          new A() ;
-         a.s ;
-         a.m ;
-         a.p ;
-      }
-
+virtual void main() {
+   A a ;
+   a =    new A() ;
+   a.s ;
+   a.m ;
+   a.p ;
 }
+
 

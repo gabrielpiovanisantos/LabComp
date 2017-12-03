@@ -87,38 +87,35 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         B b ;
-         C c ;
-         cout << ;
-         cout << Ok-ger15;
-         cout << The output should be :;
-         cout << 1 2 1 2 3 4 3 4 5 6 5 6;
-         a =          new A() ;
-         a.init_A ;
-         a.call_p ;
-         a.call_q ;
-         a.r ;
-         a.s ;
-         b =          new B() ;
-         b.init_B ;
-         b.init_A ;
-         b.call_p ;
-         b.call_q ;
-         b.r ;
-         b.s ;
-         c =          new C() ;
-         c.init_C ;
-         c.init_A ;
-         c.init_C ;
-         c.call_p ;
-         c.call_q ;
-         c.r ;
-         c.s ;
-      }
-
+virtual void main() {
+   A a ;
+   B b ;
+   C c ;
+   cout << ;
+   cout << Ok-ger15;
+   cout << The output should be :;
+   cout << 1 2 1 2 3 4 3 4 5 6 5 6;
+   a =    new A() ;
+   a.init_A ;
+   a.call_p ;
+   a.call_q ;
+   a.r ;
+   a.s ;
+   b =    new B() ;
+   b.init_B ;
+   b.init_A ;
+   b.call_p ;
+   b.call_q ;
+   b.r ;
+   b.s ;
+   c =    new C() ;
+   c.init_C ;
+   c.init_A ;
+   c.init_C ;
+   c.call_p ;
+   c.call_q ;
+   c.r ;
+   c.s ;
 }
+
 

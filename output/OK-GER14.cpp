@@ -66,27 +66,24 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         B b ;
-         C c ;
-         D d ;
-         cout << ;
-         cout << Ok-ger14;
-         cout << The output should be :;
-         cout << 4 3 2 1;
-         d =          new D() ;
-         d.init ;
-         cout << d.get_D;
-         c = d ;
-         cout << c.get_C;
-         b = c ;
-         cout << b.get_B;
-         a = b ;
-         cout << a.get_A;
-      }
-
+virtual void main() {
+   A a ;
+   B b ;
+   C c ;
+   D d ;
+   cout << ;
+   cout << Ok-ger14;
+   cout << The output should be :;
+   cout << 4 3 2 1;
+   d =    new D() ;
+   d.init ;
+   cout << d.get_D;
+   c = d ;
+   cout << c.get_C;
+   b = c ;
+   cout << b.get_B;
+   a = b ;
+   cout << a.get_A;
 }
+
 

@@ -8,13 +8,10 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         a =          new A() ;
-         cout << a.m(          3,          4, true );
-      }
-
+virtual void main() {
+   A a ;
+   a =    new A() ;
+   cout << a.m(    3,    4, true );
 }
+
 

@@ -8,17 +8,14 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         cout << ;
-         cout << Ok-ger07;
-         cout << The output should be :;
-         cout << 0;
-         a =          new A() ;
-         a.m ;
-      }
-
+virtual void main() {
+   A a ;
+   cout << ;
+   cout << Ok-ger07;
+   cout << The output should be :;
+   cout << 0;
+   a =    new A() ;
+   a.m ;
 }
+
 

@@ -1,10 +1,7 @@
 #include <iostream>
 using namespace std;
-class Program {
-public: 
-      virtual void run() {
-         cout << (         1 +          2         ) + (-         3         );
-      }
-
+virtual void main() {
+   cout << (   1 +    2   ) + (-   3   );
 }
+
 

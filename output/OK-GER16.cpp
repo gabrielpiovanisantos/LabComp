@@ -55,33 +55,30 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         B b ;
-         C c ;
-         cout << ;
-         cout << Ok-ger16;
-         cout << The output should be: ;
-         cout << 2 2 0 0 2 0 0 0 0 0 0;
-         b =          new B() ;
-         b.init ;
-         c =          new C() ;
-         c.init ;
-         cout << b.get_B;
-         a = b ;
-         a.print ;
-         b.print ;
-         a.init ;
-         b.init ;
-         cout << a.get_A;
-         cout << b.get_A;
-         a = c ;
-         cout << a.get_A;
-         c =          new C() ;
-         cout << c.get_A;
-      }
-
+virtual void main() {
+   A a ;
+   B b ;
+   C c ;
+   cout << ;
+   cout << Ok-ger16;
+   cout << The output should be: ;
+   cout << 2 2 0 0 2 0 0 0 0 0 0;
+   b =    new B() ;
+   b.init ;
+   c =    new C() ;
+   c.init ;
+   cout << b.get_B;
+   a = b ;
+   a.print ;
+   b.print ;
+   a.init ;
+   b.init ;
+   cout << a.get_A;
+   cout << b.get_A;
+   a = c ;
+   cout << a.get_A;
+   c =    new C() ;
+   cout << c.get_A;
 }
+
 

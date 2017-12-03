@@ -18,13 +18,10 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         a =          new A() ;
-         cout << a.m;
-      }
-
+virtual void main() {
+   A a ;
+   a =    new A() ;
+   cout << a.m;
 }
+
 

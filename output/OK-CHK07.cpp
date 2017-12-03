@@ -91,34 +91,31 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         University s ;
-         Person joao ;
-         Person maria ;
-         Group g ;
-         s =          new University() ;
-         s.init( UFSCar, Sao Carlos,          7000 ) ;
-         s.print ;
-         cout << ;
-         joao =          new Person() ;
-         joao.init( Joao,          21 ) ;
-         joao.setCourse( EnC ) ;
-         joao.setNumber(          6729 ) ;
-         maria =          new Person() ;
-         maria.init( Maria,          20 ) ;
-         maria.setCourse( Fisioterapia ) ;
-         maria.setNumber(          8607 ) ;
-         joao.print ;
-         cout << ;
-         maria.print ;
-         cout << ;
-         g =          new Group() ;
-         g.set( joao, maria ) ;
-         g.print ;
-         cout << ;
-      }
-
+virtual void main() {
+   University s ;
+   Person joao ;
+   Person maria ;
+   Group g ;
+   s =    new University() ;
+   s.init( UFSCar, Sao Carlos,    7000 ) ;
+   s.print ;
+   cout << ;
+   joao =    new Person() ;
+   joao.init( Joao,    21 ) ;
+   joao.setCourse( EnC ) ;
+   joao.setNumber(    6729 ) ;
+   maria =    new Person() ;
+   maria.init( Maria,    20 ) ;
+   maria.setCourse( Fisioterapia ) ;
+   maria.setNumber(    8607 ) ;
+   joao.print ;
+   cout << ;
+   maria.print ;
+   cout << ;
+   g =    new Group() ;
+   g.set( joao, maria ) ;
+   g.print ;
+   cout << ;
 }
+
 

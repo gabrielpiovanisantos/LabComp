@@ -14,17 +14,14 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         cout << ;
-         cout << Ok-ger02;
-         cout << The output should be :;
-         cout << 6 1 2 3 4 5 6;
-         a =          new A() ;
-         a.m ;
-      }
-
+virtual void main() {
+   A a ;
+   cout << ;
+   cout << Ok-ger02;
+   cout << The output should be :;
+   cout << 6 1 2 3 4 5 6;
+   a =    new A() ;
+   a.m ;
 }
+
 

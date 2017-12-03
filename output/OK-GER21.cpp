@@ -15,26 +15,20 @@ public:
 
 }
 
-class Program {
-
-private: 
-A a;
-public: 
-      virtual void print() {
-         cout << this.a.get;
-      }
-
-      virtual A get() {
-         return this.a ;
-      }
-
-      virtual void run() {
-         cout << ;
-         cout << Ok-ger21;
-         cout << The output should be :;
-         cout << 0;
-         cout << 0;
-      }
-
+virtual void print() {
+   cout << this.a.get;
 }
+
+virtual A get() {
+   return this.a ;
+}
+
+virtual void main() {
+   cout << ;
+   cout << Ok-ger21;
+   cout << The output should be :;
+   cout << 0;
+   cout << 0;
+}
+
 

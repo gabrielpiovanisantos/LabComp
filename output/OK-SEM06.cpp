@@ -18,13 +18,10 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         a =          new A() ;
-         a.set(          0 ) ;
-      }
-
+virtual void main() {
+   A a ;
+   a =    new A() ;
+   a.set(    0 ) ;
 }
+
 

@@ -38,22 +38,19 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         A a ;
-         B b ;
-         C c ;
-         cout << ;
-         cout << Ok-ger12;
-         cout << The output should be :;
-         cout << 1 2 1 2 1 2 1 2;
-         b =          new B() ;
-         b.m2(          1 ) ;
-         c =          new C() ;
-         c.m1 ;
-         c.m3 ;
-      }
-
+virtual void main() {
+   A a ;
+   B b ;
+   C c ;
+   cout << ;
+   cout << Ok-ger12;
+   cout << The output should be :;
+   cout << 1 2 1 2 1 2 1 2;
+   b =    new B() ;
+   b.m2(    1 ) ;
+   c =    new C() ;
+   c.m1 ;
+   c.m3 ;
 }
+
 

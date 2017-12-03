@@ -49,17 +49,14 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         C c ;
-         cout << ;
-         cout << Ok-ger10;
-         cout << The output should be :;
-         cout << 1 1 2 2 3 3 4 4;
-         c =          new C() ;
-         c.m4(          4 ) ;
-      }
-
+virtual void main() {
+   C c ;
+   cout << ;
+   cout << Ok-ger10;
+   cout << The output should be :;
+   cout << 1 1 2 2 3 3 4 4;
+   c =    new C() ;
+   c.m4(    4 ) ;
 }
+
 

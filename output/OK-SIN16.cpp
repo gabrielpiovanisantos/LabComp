@@ -1,30 +1,27 @@
 #include <iostream>
 using namespace std;
-class Program {
-public: 
-      virtual void run() {
-         int b ;
-         b = false ;
-         do {
-         } while (false)
+virtual void main() {
+   int b ;
+   b = false ;
+   do {
+   } while (false)
  ;
-         do {
-         } while (b)
+   do {
+   } while (b)
  ;
-         int i, j, n ;
-         i =          0 ;
-         j =          0 ;
-         n =          10 ;
-         do {
-            do {
-               i = i + 1 ;
-               write( i );
-            } while (i < n)
+   int i, j, n ;
+   i =    0 ;
+   j =    0 ;
+   n =    10 ;
+   do {
+      do {
+         i = i + 1 ;
+         write( i );
+      } while (i < n)
  ;
-            j = j + 1 ;
-         } while (j < n)
+      j = j + 1 ;
+   } while (j < n)
  ;
-      }
-
 }
+
 

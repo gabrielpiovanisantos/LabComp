@@ -36,14 +36,11 @@ public:
 
 }
 
-class Program {
-public: 
-      virtual void run() {
-         B b ;
-         b =          new B() ;
-         b.set(          1 ) ;
-         b.m ;
-      }
-
+virtual void main() {
+   B b ;
+   b =    new B() ;
+   b.set(    1 ) ;
+   b.m ;
 }
+
 

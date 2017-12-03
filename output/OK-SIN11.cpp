@@ -1,22 +1,19 @@
 #include <iostream>
 using namespace std;
-class Program {
-public: 
-      virtual void run() {
+virtual void main() {
  ;
  ;
  ;
  ;
  ;
-         cout <<          1;
+   cout <<    1;
  ;
  ;
-         if ( true)
+   if ( true)
  ;
-         while ( false )
+   while ( false )
  ;
  ;
-      }
-
 }
+
 

@@ -124,67 +124,76 @@ public class KraClass extends Type {
 	}
 
 	public void genCplusplus(PW pw) {
-		if (this.superclass == null) {
-			pw.println("class " + this.getName() + " {");
-		} else {
-			pw.println("class " + this.getName() + ": public  " + this.superclass.getName() + " {");
-		}
-		pw.add();
-		if (this.instanceVariableList.size() > 0 ) {
-			pw.println("");
-			pw.println("private: ");
+		if(!this.getName().equals("Program")){
+			if (this.superclass == null) {
+				pw.println("class " + this.getName() + " {");
+			} else {
+				pw.println("class " + this.getName() + ": public  " + this.superclass.getName() + " {");
+			}
 			pw.add();
-			for (InstanceVariable instvar : this.instanceVariableList)
-				instvar.genCplusplus(pw);
-			pw.sub();
-		}
-		boolean publicflag = false;
-		boolean privateflag = false;
-		
-		if (this.publicMethodList != null) {
-			 for (MethodDec mdec : this.publicMethodList) {
-				if (mdec != null){
-					if(mdec.getQualifier() == Symbol.PUBLIC){
-						publicflag = true;
-						break;
-					}
-				}
-			 }
-			 if(publicflag){
-				 pw.println("public: ");
-				 pw.add();
+			if (this.instanceVariableList.size() > 0 ) {
+				pw.println("");
+				pw.println("private: ");
+				pw.add();
+				for (InstanceVariable instvar : this.instanceVariableList)
+					instvar.genCplusplus(pw);
+				pw.sub();
+			}
+			boolean publicflag = false;
+			boolean privateflag = false;
+			
+			if (this.publicMethodList != null) {
 				 for (MethodDec mdec : this.publicMethodList) {
-						if (mdec != null){
-							if(mdec.getQualifier() == Symbol.PUBLIC)
-								mdec.genCplusplus(pw);
-						}
-						pw.println("");
-				 }
-				 pw.sub();
-			 }
-			 for (MethodDec mdec : this.publicMethodList) {
-				 	if (mdec != null){
-						if(mdec.getQualifier() == Symbol.PRIVATE){
-							privateflag = true;
+					if (mdec != null){
+						if(mdec.getQualifier() == Symbol.PUBLIC){
+							publicflag = true;
 							break;
 						}
 					}
-			 }
-			 
-			 if(privateflag){
-				 pw.println("private: ");
-				 pw.add();
-				 for (MethodDec mdec : this.publicMethodList) {
-						if (mdec != null){
-							if(mdec.getQualifier() == Symbol.PRIVATE)
-								mdec.genCplusplus(pw);
-						}
-						pw.println("");
 				 }
-				 pw.sub();
-			}	 
+				 if(publicflag){
+					 pw.println("public: ");
+					 pw.add();
+					 for (MethodDec mdec : this.publicMethodList) {
+							if (mdec != null){
+								if(mdec.getQualifier() == Symbol.PUBLIC)
+									mdec.genCplusplus(pw);
+							}
+							pw.println("");
+					 }
+					 pw.sub();
+				 }
+				 for (MethodDec mdec : this.publicMethodList) {
+					 	if (mdec != null){
+							if(mdec.getQualifier() == Symbol.PRIVATE){
+								privateflag = true;
+								break;
+							}
+						}
+				 }
+				 
+				 if(privateflag){
+					 pw.println("private: ");
+					 pw.add();
+					 for (MethodDec mdec : this.publicMethodList) {
+							if (mdec != null){
+								if(mdec.getQualifier() == Symbol.PRIVATE)
+									mdec.genCplusplus(pw);
+							}
+							pw.println("");
+					 }
+					 pw.sub();
+				}	 
+			}
+			pw.sub();
+			pw.println("}");
 		}
-		pw.sub();
-		pw.println("}");
+		else{
+			for (MethodDec mdec : this.publicMethodList) {
+				if (mdec != null)
+					mdec.genCplusplus(pw);					
+				pw.println("");
+			}
+		}
 	}
 }
