@@ -1,4 +1,5 @@
 #include <iostream>
+#include <new>
 using namespace std;
 class A {
 public: 
@@ -6,7 +7,7 @@ public:
          cout <<          1, n;
       }
 
-}
+};
 
 class B: public  A {
 public: 
@@ -16,7 +17,7 @@ public:
          cout <<          2, n;
       }
 
-}
+};
 
 class C: public  B {
 public: 
@@ -27,20 +28,20 @@ public:
       }
 
       virtual void m4() {
-         this.m3(          3 ) ;
+         this->m3(         3) ;
          cout <<          4, n;
       }
 
-}
+};
 
-virtual void main() {
-   C c ;
+int main() {
+   C *c ;
    cout << ;
    cout << Ok-ger09;
    cout << The output should be :;
    cout << 1 1 2 2 3 3 4 4;
-   c =    new C() ;
-   c.m4(    4 ) ;
+   c =    new C ;
+   c->m4(   4) ;
 }
 
 

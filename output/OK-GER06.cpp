@@ -1,11 +1,12 @@
 #include <iostream>
+#include <new>
 using namespace std;
 class A {
 public: 
       virtual void m() {
-         int i ;
-         int j ;
-         int k ;
+         int *i ;
+         int *j ;
+         int *k ;
          cout <<          7;
          i =          1 ;
          j = i +          1 ;
@@ -22,16 +23,16 @@ public:
          cout <<          7;
       }
 
-}
+};
 
-virtual void main() {
-   A a ;
+int main() {
+   A *a ;
    cout << ;
    cout << Ok-ger06;
    cout << The output should be :;
    cout << 7 1 2 3 4 5 6 7;
-   a =    new A() ;
-   a.m ;
+   a =    new A ;
+   a->m() ;
 }
 
 

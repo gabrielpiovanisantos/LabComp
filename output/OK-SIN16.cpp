@@ -1,7 +1,8 @@
 #include <iostream>
+#include <new>
 using namespace std;
-virtual void main() {
-   int b ;
+int main() {
+   int *b ;
    b = false ;
    do {
    } while (false)
@@ -9,7 +10,7 @@ virtual void main() {
    do {
    } while (b)
  ;
-   int i, j, n ;
+   int *i, *j, *n ;
    i =    0 ;
    j =    0 ;
    n =    10 ;

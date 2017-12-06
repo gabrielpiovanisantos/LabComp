@@ -1,4 +1,5 @@
 #include <iostream>
+#include <new>
 using namespace std;
 class A {
 public: 
@@ -6,12 +7,12 @@ public:
          return x + y ;
       }
 
-}
+};
 
-virtual void main() {
-   A a ;
-   a =    new A() ;
-   cout << a.m(    3,    4, true );
+int main() {
+   A *a ;
+   a =    new A ;
+   cout << a->m(   3,    4, true);
 }
 
 

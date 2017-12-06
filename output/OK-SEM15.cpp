@@ -1,4 +1,5 @@
 #include <iostream>
+#include <new>
 using namespace std;
 class A {
 public: 
@@ -7,10 +8,10 @@ public:
       }
 
       virtual void accept() {
-         x.print ;
+         x->print() ;
       }
 
-}
+};
 
 class B: public  A {
 public: 
@@ -19,12 +20,12 @@ public:
  ;
       }
 
-}
+};
 
-virtual void main() {
-   B b ;
-   b =    new B() ;
-   b.m ;
+int main() {
+   B *b ;
+   b =    new B ;
+   b->m() ;
 }
 
 

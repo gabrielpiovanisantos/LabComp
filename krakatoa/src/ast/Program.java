@@ -29,7 +29,9 @@ public class Program {
 
 	public void genCplusplus(PW pw) {
 		pw.println("#include <iostream>");
+		pw.println("#include <new>");
 		pw.println("using namespace std;");
+		
 		for (KraClass classe : classList) {
 			if (classe != null)
 				classe.genCplusplus(pw);

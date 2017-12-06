@@ -1,8 +1,9 @@
 #include <iostream>
+#include <new>
 using namespace std;
-virtual void main() {
-   int a, b ;
-   int e, f ;
+int main() {
+   int *a, *b ;
+   int *e, *f ;
    a =    1 ;
    b =    1 ;
    e = true ;

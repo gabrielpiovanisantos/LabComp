@@ -1,4 +1,5 @@
 #include <iostream>
+#include <new>
 using namespace std;
 class A {
 public: 
@@ -6,16 +7,16 @@ public:
          cout <<          0;
       }
 
-}
+};
 
-virtual void main() {
-   A a ;
+int main() {
+   A *a ;
    cout << ;
    cout << Ok-ger07;
    cout << The output should be :;
    cout << 0;
-   a =    new A() ;
-   a.m ;
+   a =    new A ;
+   a->m() ;
 }
 
 

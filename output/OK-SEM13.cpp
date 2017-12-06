@@ -1,4 +1,5 @@
 #include <iostream>
+#include <new>
 using namespace std;
 class A {
 public: 
@@ -6,15 +7,15 @@ public:
       }
 
       virtual void p() {
-         int m ;
+         int *m ;
       }
 
-}
+};
 
-virtual void main() {
-   A a ;
-   a =    new A() ;
-   a.p ;
+int main() {
+   A *a ;
+   a =    new A ;
+   a->p() ;
 }
 
 

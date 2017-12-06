@@ -1,14 +1,15 @@
 #include <iostream>
+#include <new>
 using namespace std;
-virtual void main() {
+int main() {
    cout << ;
    cout << Ok-ger22;
    cout << The output should be 100;
-   int i, j, n ;
+   int *i, *j, *n ;
    i =    0 ;
    j =    0 ;
    n =    10 ;
-   int b ;
+   int *b ;
    b = false ;
    do {
       n = n + 1 ;
@@ -18,7 +19,7 @@ virtual void main() {
       puts("'do-while' statement with 'false' as expression'");
    }
    n =    10 ;
-   int sum ;
+   int *sum ;
    sum =    0 ;
    do {
       i = 0 ;

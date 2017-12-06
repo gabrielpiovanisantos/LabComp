@@ -1,7 +1,8 @@
 #include <iostream>
+#include <new>
 using namespace std;
-virtual void main() {
-   int a ;
+int main() {
+   int *a ;
    a =    1 ;
    cout << -a;
 }

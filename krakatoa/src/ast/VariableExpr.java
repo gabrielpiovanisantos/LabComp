@@ -13,7 +13,7 @@ public class VariableExpr extends Expr {
     }
     
     public void genCplusplus( PW pw, boolean putParenthesis ) {
-        pw.print( v.getName() );
+        pw.print(v.getName());
     }
     
     public Type getType() {

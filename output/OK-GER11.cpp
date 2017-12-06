@@ -1,4 +1,5 @@
 #include <iostream>
+#include <new>
 using namespace std;
 class A {
 public: 
@@ -8,10 +9,10 @@ public:
 
       virtual void m2() {
          cout << n;
-         this.m1() ;
+         this->m1() ;
       }
 
-}
+};
 
 class B: public  A {
 public: 
@@ -19,20 +20,20 @@ public:
          cout <<          4;
       }
 
-}
+};
 
-virtual void main() {
-   A a ;
-   B b ;
+int main() {
+   A *a ;
+   B *b ;
    cout << ;
    cout << Ok-ger11;
    cout << The output should be :;
    cout << 4 1 2 3 4;
    cout <<    4;
-   a =    new A() ;
-   a.m2(    1 ) ;
-   a =    new B() ;
-   a.m2(    3 ) ;
+   a =    new A ;
+   a->m2(   1) ;
+   a =    new B ;
+   a->m2(   3) ;
 }
 
 

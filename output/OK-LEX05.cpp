@@ -1,6 +1,7 @@
 #include <iostream>
+#include <new>
 using namespace std;
-virtual void main() {
+int main() {
    cout <<    0;
    cout <<    32767;
 }

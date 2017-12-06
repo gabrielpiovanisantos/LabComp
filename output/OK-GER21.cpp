@@ -1,4 +1,5 @@
 #include <iostream>
+#include <new>
 using namespace std;
 class A {
 
@@ -6,24 +7,24 @@ private:
 int *n;
 public: 
       virtual void set() {
-         this.n = n ;
+         this->n() = n ;
       }
 
       virtual int get() {
-         return this.n ;
+         return this->n() ;
       }
 
-}
+};
 
 virtual void print() {
-   cout << this.a.get;
+   cout << this->a->get();
 }
 
 virtual A get() {
-   return this.a ;
+   return this->a() ;
 }
 
-virtual void main() {
+int main() {
    cout << ;
    cout << Ok-ger21;
    cout << The output should be :;

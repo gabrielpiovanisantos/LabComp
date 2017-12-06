@@ -186,7 +186,7 @@ public class KraClass extends Type {
 				}	 
 			}
 			pw.sub();
-			pw.println("}");
+			pw.println("};");
 		}
 		else{
 			for (MethodDec mdec : this.publicMethodList) {

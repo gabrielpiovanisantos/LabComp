@@ -51,20 +51,17 @@ public class VarMethodExpr extends Expr {
 	public void genCplusplus(PW pw, boolean putParenthesis) {
 		pw.print(this.firstId);
 		if (this.id != null) {
-			pw.print("." + this.id);
-			if (this.id22 != null)
-				pw.print("." + this.id22);
-			if (this.type != null) {
-				if (this.exprList != null) {
-					if (this.exprList.getExprList().isEmpty())
-						pw.print("()");
-					else {
-						pw.print("( ");
-						this.exprList.genCplusplus(pw);
-						pw.print(" )");
-					}
+			pw.print("->" + this.id);
+			if (this.id22 != null){
+				pw.print("->" + this.id22);
+			}
+			pw.print("(");
+			if(this.exprList != null){
+				if(!this.exprList.getExprList().isEmpty()){
+					this.exprList.genCplusplus(pw);
 				}
 			}
+			pw.print(")");
 		}
 	}
 
