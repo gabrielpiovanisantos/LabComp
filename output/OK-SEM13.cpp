@@ -7,15 +7,18 @@ public:
       }
 
       virtual void p() {
-         int *m ;
+         int m;
       }
 
 };
 
-int main() {
-   A *a ;
-   a =    new A ;
-   a->p() ;
-}
+class Program {
+public: 
+};
+      int main() {
+         A *a;
+         a = new A;
+         a->p();
+      }
 
 

@@ -37,7 +37,10 @@ public class LocalDec {
 		int size = this.arrayVar.size();
 		for(Variable v: arrayVar)
 		{
-			pw.print("*"+v.getName());
+			if(!v.getType().isDefaultType())
+				pw.print("*"+v.getName());
+			else
+				pw.print(v.getName());
 			if(--size>0)
 				pw.print(", ");
 		}

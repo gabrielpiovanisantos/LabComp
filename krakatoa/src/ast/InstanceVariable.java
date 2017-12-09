@@ -17,10 +17,10 @@ public class InstanceVariable extends Variable {
 	}
 
 	public void genCplusplus(PW pw) {
-		if(!this.getType().isDefaultType())
-			pw.println(this.getType().getName()+" "+this.getName()+";");
+		if(this.getType().isDefaultType())
+			pw.printIdent(this.getType().getName()+" "+this.getName()+";");
 		else
-			pw.println(this.getType().getName()+" *"+this.getName()+";");
+			pw.printIdent(this.getType().getName()+" *"+this.getName()+";");
 		
 	}
 

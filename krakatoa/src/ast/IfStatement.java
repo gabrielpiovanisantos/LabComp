@@ -18,7 +18,8 @@ public class IfStatement extends Statement {
 		this.expr.genCplusplus(pw, false);
 		pw.println(")");
 		pw.add();
-		this.stmt.genCplusplus(pw);
+		if(this.stmt != null)
+			this.stmt.genCplusplus(pw);
 		pw.sub();
 		if(this.elseStmt!=null)
 		{

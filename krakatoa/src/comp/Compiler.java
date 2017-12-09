@@ -467,7 +467,6 @@ public class Compiler {
 		 * ReturnStat ``;'' | ReadStat ``;'' | WriteStat ``;'' | ``break'' ``;'' | ``;''
 		 * | CompStatement | LocalDec
 		 */
-
 		switch (lexer.token) {
 		case THIS:
 		case IDENT:
@@ -475,11 +474,11 @@ public class Compiler {
 		case INT:
 		case BOOLEAN:
 		case STRING:
-			return assignExprLocalDec();
+			return assignExprLocalDec();			
 		case ASSERT:
 			return assertStatement();
 		case RETURN:
-			return returnStatement();
+			return  returnStatement();
 		case READ:
 			return readStatement();
 		case WRITE:
@@ -504,6 +503,7 @@ public class Compiler {
 			return dowhileStatement();
 		default:
 			signalError.showError("Statement expected");
+			break;
 		}
 		return null;
 	}
@@ -644,7 +644,6 @@ public class Compiler {
 	private WhileStatement whileStatement() {
 
 		lexer.nextToken();
-
 		if (lexer.token != Symbol.LEFTPAR)
 			signalError.showError("( expected");
 		lexer.nextToken();
@@ -655,7 +654,14 @@ public class Compiler {
 			signalError.showError(") expected");
 		lexer.nextToken();
 		countWhile++;
-		Statement stmt = statement();
+		Statement stmt;
+		if(lexer.token == Symbol.LEFTCURBRACKET){
+			lexer.nextToken();
+			stmt = statementList();
+			lexer.nextToken();
+		}
+		else
+			stmt = statement();
 		return new WhileStatement(expr, stmt);
 	}
 
@@ -672,7 +678,12 @@ public class Compiler {
 		if (lexer.token != Symbol.RIGHTPAR)
 			signalError.showError(") expected");
 		lexer.nextToken();
-		ifStmt.stmt = statement();
+		if(lexer.token == Symbol.LEFTCURBRACKET)
+			lexer.nextToken();
+		Statement stmt = statement();
+		ifStmt.stmt = stmt;
+		if(lexer.token == Symbol.RIGHTCURBRACKET)
+			lexer.nextToken();
 		if (lexer.token == Symbol.ELSE) {
 			lexer.nextToken();
 			ifStmt.elseStmt = statement();
@@ -1019,16 +1030,13 @@ public class Compiler {
 			String superClassName = null;
 			
 			while (superclass != null) {
-				ArrayList<MethodDec> list = superclass.getPublicMethodList();
-				for (int i = 0; i < list.size(); i++) {
-					if (list.get(i).getName().equals(messageName)) {
-						flag2 = true;
-						break;
-					}
+				if(superclass.searchPublicMethod(messageName)!= null){
+					flag2 = true;
+					superClassName = superclass.getName();
+					break;
 				}
-				superClassName = superclass.getName();
-				superclass = superclass.getSuperclass();
 				
+				superclass = superclass.getSuperclass();
 			}
 			
 			if (!flag2)
@@ -1128,7 +1136,7 @@ public class Compiler {
 						if (avar == null)
 							signalError.showError("Identifier " + id + "was not declared");
 						Type typeVar = avar.getType();
-						return new VarMethodExpr(firstId, id, typeVar);
+						return new VarMethodExpr(firstId, id, typeVar,false);
 					}
 				}
 			}
@@ -1202,13 +1210,25 @@ public class Compiler {
 						signalError.showError("Identifier expected");
 					}
 					String id2 = lexer.getStringValue();
+					Type type = null;
+					
+					ArrayList<InstanceVariable> instVarList = this.currentClass.getInstanceVariableList();
+					for(InstanceVariable instVar: instVarList){
+						if(instVar.getName().equals(id)){
+							KraClass kraclass = this.symbolTable.getInGlobal(instVar.getType().getName());
+							MethodDec amethod = kraclass.searchPublicMethod(id2);
+							if (amethod == null)
+								signalError.showError("Method " + id + " is not a public method of currentclass or not exist");
+							else
+								type = amethod.getReturnType();
+						}
+					}
+					
 					lexer.nextToken();
 					if (lexer.token != Symbol.LEFTPAR)
 						this.signalError.showError(" ( expected");
 					exprList = this.realParameters();
-					if (lexer.token != Symbol.RIGHTPAR)
-						this.signalError.showError(" ) expected");
-					return new VarMethodExpr("this", id, id2, exprList);
+					return new VarMethodExpr("this", id, id2, exprList,type);
 				} else {
 					// retorne o objeto da ASA que representa "this" "." Id
 					/*
@@ -1230,7 +1250,7 @@ public class Compiler {
 					// nao achou a variavel de instancia indicada
 					if (!flag)
 						signalError.showError("InstanceVariable not found in this");
-					return new VarMethodExpr("this", id, type);
+					return new VarMethodExpr("this", id, type,true);
 				}
 			}
 		default:
@@ -1240,9 +1260,6 @@ public class Compiler {
 	}
 
 	private LiteralInt literalInt() {
-
-		LiteralInt e = null;
-
 		// the number value is stored in lexer.getToken().value as an object of
 		// Integer.
 		// Method intValue returns that value as an value of type int.

@@ -8,10 +8,13 @@ public:
 
 };
 
-int main() {
-   A *a ;
-   a =    new A ;
-   a->m() ;
-}
+class Program {
+public: 
+};
+      int main() {
+         A *a;
+         a = new A;
+         a->m();
+      }
 
 

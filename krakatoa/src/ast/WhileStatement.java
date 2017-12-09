@@ -34,10 +34,13 @@ public class WhileStatement extends Statement{
 	public void genCplusplus(PW pw) {
 		pw.printIdent("while ( ");
 		this.expr.genCplusplus(pw, false);
-		pw.println(" )");
+		pw.println(" ){");
 		pw.add();
-		this.stmt.genCplusplus(pw);
+		if(this.stmt != null)
+			this.stmt.genCplusplus(pw);
 		pw.sub();
+		pw.printIdent("}");
+		pw.println("");
 	}
 
 	@Override

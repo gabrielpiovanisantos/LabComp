@@ -32,7 +32,15 @@ public class FormalParamDec {
 	}
 
 	public void genCplusplus(PW pw) {
-		// TODO Auto-generated method stub
-		
+		int size = params.size();
+		for (ParamDec p: params)
+		{
+			if(!p.getType().isDefaultType())
+				pw.print(p.getType().getName() + " *" + p.getName());
+			else
+				pw.print(p.getType().getName() + " " + p.getName());
+			if(--size>0)
+				pw.print(", ");
+		}
 	}
 }

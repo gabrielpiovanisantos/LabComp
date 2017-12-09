@@ -4,30 +4,33 @@ using namespace std;
 class A {
 
 private: 
-int *n;
+      int n;
 public: 
       virtual void m() {
-         int *k ;
-         k = this->n() ;
+         int k;
+         k = this->n;
          cout << k;
       }
 
       virtual void p() {
-         cout << this->n();
+         cout << this->n;
       }
 
       virtual void s() {
-         this->n() =          0 ;
+         this->n = 0;
       }
 
 };
 
-int main() {
-   A *a ;
-   a =    new A ;
-   a->s() ;
-   a->m() ;
-   a->p() ;
-}
+class Program {
+public: 
+};
+      int main() {
+         A *a;
+         a = new A;
+         a->s();
+         a->m();
+         a->p();
+      }
 
 

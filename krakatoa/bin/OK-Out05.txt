@@ -1,0 +1,5 @@
+
+Ok-ger05
+The output should be what you give as input.
+Type in six numbers
+512345

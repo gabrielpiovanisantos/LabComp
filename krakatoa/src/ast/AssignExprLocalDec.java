@@ -21,8 +21,9 @@ public class AssignExprLocalDec extends Statement {
 			this.left.genCplusplus(pw, false);
 			if (this.right != null) {
 				pw.print(" = ");
-				if (this.right != null)
+				if (this.right != null){
 					this.right.genCplusplus(pw, false);
+				}
 			}
 		}
 

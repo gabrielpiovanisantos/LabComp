@@ -4,24 +4,27 @@ using namespace std;
 class A {
 
 private: 
-int *i;
+      int i;
 public: 
-      virtual void put() {
+      virtual void put(int x, int y, boolean ok) {
       }
 
 };
 
 class B: public  A {
 public: 
-      virtual void put() {
+      virtual void put(int x, int y, int ok) {
       }
 
 };
 
-int main() {
-   A *a ;
-   a =    new A ;
-   a->put(   0,    1, true) ;
-}
+class Program {
+public: 
+};
+      int main() {
+         A *a;
+         a = new A;
+         a->put(0, 1, true);
+      }
 
 

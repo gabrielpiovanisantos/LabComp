@@ -22,10 +22,13 @@ public:
 
 };
 
-int main() {
-   C *c ;
-   c =    new C ;
-   c->m() ;
-}
+class Program {
+public: 
+};
+      int main() {
+         C *c;
+         c = new C;
+         c->m();
+      }
 
 

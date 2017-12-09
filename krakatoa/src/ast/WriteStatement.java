@@ -6,6 +6,8 @@
 
 package ast;
 
+import java.util.ArrayList;
+
 public class WriteStatement extends Statement{
 
 	public ExprList exprlist;
@@ -13,7 +15,19 @@ public class WriteStatement extends Statement{
 	@Override
 	public void genCplusplus(PW pw) {
 		pw.printIdent("cout << ");
-		this.exprlist.genCplusplus(pw);
+		ArrayList<Expr> exprList = this.exprlist.getExprList();
+		int size = exprList.size();
+		if(size > 1){
+			for(Expr e: exprList){
+				
+					e.genCplusplus(pw, false);
+					if(--size>0)
+						pw.print(" << ");
+				
+			}
+		}
+		else
+			this.exprlist.genCplusplus(pw);
 		pw.println(";");
 		
 	}

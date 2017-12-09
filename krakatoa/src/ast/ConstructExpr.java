@@ -29,7 +29,7 @@ public class ConstructExpr extends Expr {
 
 	@Override
 	public void genCplusplus(PW pw, boolean putParenthesis) {
-		pw.printIdent("new "+ this.className);	
+		pw.print("new "+ this.className);	
 	}
 
 }

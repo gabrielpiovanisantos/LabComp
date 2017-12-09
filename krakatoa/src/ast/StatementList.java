@@ -8,7 +8,7 @@ package ast;
 
 import java.util.ArrayList;
 
-public class StatementList {
+public class StatementList extends Statement{
 
 	private ArrayList<Statement> stmtlist;
 

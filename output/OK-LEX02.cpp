@@ -4,17 +4,20 @@ using namespace std;
 class A {
 public: 
       virtual void m() {
-         int *i ;
-         i =          1 ;
+         int i;
+         i = 1;
          cout << i;
       }
 
 };
 
-int main() {
-   A *a ;
-   a =    new A ;
-   a->m() ;
-}
+class Program {
+public: 
+};
+      int main() {
+         A *a;
+         a = new A;
+         a->m();
+      }
 
 

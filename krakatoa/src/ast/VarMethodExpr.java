@@ -22,46 +22,54 @@ public class VarMethodExpr extends Expr {
 	private ExprList exprList;
 	private String id22;
 	private Type type;
-
+	private boolean variable;
+	
 	public VarMethodExpr(String firstId, String id, ExprList exprList, Type type) {
 		this.firstId = firstId;
 		this.id = id;
 		this.exprList = exprList;
 		this.type = type;
+		this.variable = false;
 	}
 
-	public VarMethodExpr(String firstId2, String id2, Type type) {
+	public VarMethodExpr(String firstId2, String id2, Type type,boolean flag) {
 		this.firstId = firstId2;
 		this.id = id2;
 		this.type = type;
+		this.variable = flag;
 	}
 
 	public VarMethodExpr(String string) {
 		this.firstId = string;
 	}
 
-	public VarMethodExpr(String string, String id2, String id22, ExprList exprList2) {
+	public VarMethodExpr(String string, String id2, String id22, ExprList exprList2,Type type) {
 		this.firstId = string;
 		this.id = id2;
 		this.id22 = id22;
 		this.exprList = exprList2;
+		this.type = type;
 	}
 
 	@Override
 	public void genCplusplus(PW pw, boolean putParenthesis) {
 		pw.print(this.firstId);
 		if (this.id != null) {
-			pw.print("->" + this.id);
-			if (this.id22 != null){
-				pw.print("->" + this.id22);
-			}
-			pw.print("(");
-			if(this.exprList != null){
-				if(!this.exprList.getExprList().isEmpty()){
-					this.exprList.genCplusplus(pw);
+			
+				pw.print("->" + this.id);
+			
+			if (this.id22 != null)
+					pw.print("->" + this.id22);
+			
+			if(!this.variable){
+				pw.print("(");
+				if(this.exprList != null){
+					if(!this.exprList.getExprList().isEmpty()){
+						this.exprList.genCplusplus(pw);
+					}
 				}
+				pw.print(")");
 			}
-			pw.print(")");
 		}
 	}
 
@@ -78,15 +86,16 @@ public class VarMethodExpr extends Expr {
 			if (this.id22 != null)
 				pw.print("." + this.id22);
 			if (this.type != null) {
-				if (this.exprList != null) {
+				if (this.exprList != null) {	
 					if (this.exprList.getExprList().isEmpty())
 						pw.print("()");
 					else {
 						pw.print("( ");
 						this.exprList.genKra(pw);
 						pw.print(" )");
-					}
+					}				
 				}
+				
 			} else
 				pw.print("");
 		} else

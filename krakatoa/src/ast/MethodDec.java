@@ -56,10 +56,20 @@ public class MethodDec {
 	}
 
 	public void genCplusplus(PW pw) {
-		if(this.getName().equals("run"))
+		if(this.getName().equals("run")){
+			pw.sub();
+			pw.println("};");
+			pw.add();
 			pw.printIdent("int main(");
-		else
-			pw.printIdent("virtual "+ this.returnType.getName()	+ " " + this.getName() + "(");
+			
+		}
+		else{
+			
+			if(this.returnType.isDefaultType())
+				pw.printIdent("virtual "+ this.returnType.getName()	+ " " + this.getName() + "(");
+			else
+				pw.printIdent("*"+this.returnType.getName()	+ " " + this.getName() + "(");
+		}
 		if(this.param != null)
 			this.param.genCplusplus(pw);
 		pw.println(") {");

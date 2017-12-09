@@ -23,7 +23,7 @@ public class SuperMethodExpr extends Expr {
 		pw.print(superClassName + "::" + this.messageName + "( ");
 		if(this.exprList != null)
 			this.exprList.genCplusplus(pw);
-		pw.println(")");
+		pw.print(")");
 	}
 
 	@Override

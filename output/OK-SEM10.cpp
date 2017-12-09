@@ -3,7 +3,7 @@
 using namespace std;
 class A {
 public: 
-      virtual void first() {
+      virtual void first(int pn) {
       }
 
 };
@@ -22,22 +22,25 @@ public:
 
 };
 
-int main() {
-   A *a ;
-   B *b ;
-   C *c ;
-   a =    new A ;
-   b =    new B ;
-   c =    new C ;
-   a->first(   0) ;
-   b->first(   0) ;
-   c->first(   0) ;
-   b->second() ;
-   c->second() ;
-   c->third() ;
-   a = b ;
-   a = c ;
-   b = c ;
-}
+class Program {
+public: 
+};
+      int main() {
+         A *a;
+         B *b;
+         C *c;
+         a = new A;
+         b = new B;
+         c = new C;
+         a->first(0);
+         b->first(0);
+         c->first(0);
+         b->second();
+         c->second();
+         c->third();
+         a = b;
+         a = c;
+         b = c;
+      }
 
 

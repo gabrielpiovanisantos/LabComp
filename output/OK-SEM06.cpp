@@ -4,25 +4,28 @@ using namespace std;
 class A {
 
 private: 
-int *n;
+      int n;
 public: 
-      virtual void set() {
-         int *n ;
-         this->n() = pn ;
+      virtual void set(int pn) {
+         int n;
+         this->n = pn;
       }
 
-      virtual int put() {
-         int *put ;
-         this->n() = n ;
+      virtual int put(int n, String set) {
+         bool put;
+         this->n = n;
          return n ;
       }
 
 };
 
-int main() {
-   A *a ;
-   a =    new A ;
-   a->set(   0) ;
-}
+class Program {
+public: 
+};
+      int main() {
+         A *a;
+         a = new A;
+         a->set(0);
+      }
 
 

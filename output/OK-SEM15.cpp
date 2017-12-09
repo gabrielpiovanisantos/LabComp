@@ -4,11 +4,11 @@ using namespace std;
 class A {
 public: 
       virtual void print() {
-         cout <<          0;
+         cout << 0;
       }
 
-      virtual void accept() {
-         x->print() ;
+      virtual void accept(A *x) {
+         x->print();
       }
 
 };
@@ -16,16 +16,18 @@ public:
 class B: public  A {
 public: 
       virtual void m() {
-         A::accept( this)
- ;
+         A::accept( this);
       }
 
 };
 
-int main() {
-   B *b ;
-   b =    new B ;
-   b->m() ;
-}
+class Program {
+public: 
+};
+      int main() {
+         B *b;
+         b = new B;
+         b->m();
+      }
 
 
